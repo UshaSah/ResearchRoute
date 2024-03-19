@@ -11,7 +11,7 @@ import SwiftUI
 struct ResearchRouteApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HelloWorld()
         }
     }
 }

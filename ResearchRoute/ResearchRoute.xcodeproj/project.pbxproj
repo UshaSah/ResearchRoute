@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */; };
-		0405BCD42BAA107600BCEEEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BCD32BAA107600BCEEEA /* ContentView.swift */; };
+		0405BCD42BAA107600BCEEEA /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BCD32BAA107600BCEEEA /* HelloWorld.swift */; };
 		0405BCD62BAA107A00BCEEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0405BCD52BAA107A00BCEEEA /* Assets.xcassets */; };
 		0405BCD92BAA107A00BCEEEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		0405BCCE2BAA107600BCEEEA /* ResearchRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResearchRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchRouteApp.swift; sourceTree = "<group>"; };
-		0405BCD32BAA107600BCEEEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0405BCD32BAA107600BCEEEA /* HelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		0405BCD52BAA107A00BCEEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */,
-				0405BCD32BAA107600BCEEEA /* ContentView.swift */,
+				0405BCD32BAA107600BCEEEA /* HelloWorld.swift */,
 				0405BCD52BAA107A00BCEEEA /* Assets.xcassets */,
 				0405BCD72BAA107A00BCEEEA /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0405BCD42BAA107600BCEEEA /* ContentView.swift in Sources */,
+				0405BCD42BAA107600BCEEEA /* HelloWorld.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +272,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ResearchRoute/Preview Content\"";
-				DEVELOPMENT_TEAM = DH876A3QW8;
+				DEVELOPMENT_TEAM = 8B962782PK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -301,7 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ResearchRoute/Preview Content\"";
-				DEVELOPMENT_TEAM = DH876A3QW8;
+				DEVELOPMENT_TEAM = 8B962782PK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
