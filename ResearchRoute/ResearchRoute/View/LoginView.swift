@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @StateObject var loginViewModel = LoginViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextField("Email", text: $loginViewModel.email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            SecureField("Password", text: $loginViewModel.password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            Button("Login") {
+                loginViewModel.login(with: authViewModel)
+            }
+            .padding()
+            
+            Text(authViewModel.errorMessage)
+                .foregroundColor(.red)
+                .padding()
+        }
     }
 }
 
 #Preview {
     LoginView()
+        .environmentObject(AuthViewModel())
 }

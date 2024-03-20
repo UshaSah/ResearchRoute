@@ -12,7 +12,7 @@ struct StudentModel: Codable {
     @DocumentID var id: String?
     var firstName: String
     var lastName: String
-    var majors: [String]
-    var experience: [ExperienceModel]
-    var keywords: [String]
+    var majors: [String]?
+    var experience: [ExperienceModel]?
+    var keywords: [String]?
 }

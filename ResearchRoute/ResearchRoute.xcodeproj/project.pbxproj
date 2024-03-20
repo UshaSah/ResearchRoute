@@ -18,12 +18,15 @@
 		ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C552BAA5A9500A61C46 /* StudentApi.swift */; };
 		ED759C582BAA79E300A61C46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED759C572BAA79E300A61C46 /* GoogleService-Info.plist */; };
 		ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C5C2BAA7E7D00A61C46 /* RootView.swift */; };
-		ED759C5F2BAA82EA00A61C46 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C5E2BAA82EA00A61C46 /* RootViewModel.swift */; };
 		ED759C632BAA860600A61C46 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C622BAA860600A61C46 /* LandingView.swift */; };
 		ED759C652BAA873000A61C46 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C642BAA873000A61C46 /* LoginView.swift */; };
 		ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C662BAA873A00A61C46 /* SignUpView.swift */; };
 		ED759C692BAA938300A61C46 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C682BAA938300A61C46 /* HomeView.swift */; };
-		ED759C6B2BAA942D00A61C46 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C6A2BAA942D00A61C46 /* SplashView.swift */; };
+		ED759C6D2BAAA07D00A61C46 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C6C2BAAA07D00A61C46 /* LoginViewModel.swift */; };
+		ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C702BAAA3BC00A61C46 /* AuthApi.swift */; };
+		ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C722BAAA55E00A61C46 /* ViewModel.swift */; };
+		ED759C752BAABC0700A61C46 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C742BAABC0700A61C46 /* AuthViewModel.swift */; };
+		ED759C772BAAC01400A61C46 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C762BAAC01400A61C46 /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +39,15 @@
 		ED759C552BAA5A9500A61C46 /* StudentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentApi.swift; sourceTree = "<group>"; };
 		ED759C572BAA79E300A61C46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED759C5C2BAA7E7D00A61C46 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		ED759C5E2BAA82EA00A61C46 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		ED759C622BAA860600A61C46 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		ED759C642BAA873000A61C46 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ED759C662BAA873A00A61C46 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		ED759C682BAA938300A61C46 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		ED759C6A2BAA942D00A61C46 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		ED759C6C2BAAA07D00A61C46 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ED759C702BAAA3BC00A61C46 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
+		ED759C722BAAA55E00A61C46 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ED759C742BAABC0700A61C46 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		ED759C762BAAC01400A61C46 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +88,7 @@
 				ED759C5B2BAA7E6800A61C46 /* View */,
 				ED759C5A2BAA7E1500A61C46 /* ViewModel */,
 				ED759C4E2BAA4E3100A61C46 /* Model */,
-				ED759C3D2BAA3F5900A61C46 /* api */,
+				ED759C3D2BAA3F5900A61C46 /* Api */,
 				0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */,
 				0405BCD52BAA107A00BCEEEA /* Assets.xcassets */,
 				0405BCD72BAA107A00BCEEEA /* Preview Content */,
@@ -98,13 +104,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		ED759C3D2BAA3F5900A61C46 /* api */ = {
+		ED759C3D2BAA3F5900A61C46 /* Api */ = {
 			isa = PBXGroup;
 			children = (
 				ED759C412BAA435C00A61C46 /* DbApi.swift */,
 				ED759C552BAA5A9500A61C46 /* StudentApi.swift */,
+				ED759C702BAAA3BC00A61C46 /* AuthApi.swift */,
 			);
-			path = api;
+			path = Api;
 			sourceTree = "<group>";
 		};
 		ED759C472BAA486700A61C46 /* Frameworks */ = {
@@ -125,7 +132,10 @@
 		ED759C5A2BAA7E1500A61C46 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				ED759C5E2BAA82EA00A61C46 /* RootViewModel.swift */,
+				ED759C722BAAA55E00A61C46 /* ViewModel.swift */,
+				ED759C6C2BAAA07D00A61C46 /* LoginViewModel.swift */,
+				ED759C742BAABC0700A61C46 /* AuthViewModel.swift */,
+				ED759C762BAAC01400A61C46 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -138,7 +148,6 @@
 				ED759C642BAA873000A61C46 /* LoginView.swift */,
 				ED759C662BAA873A00A61C46 /* SignUpView.swift */,
 				ED759C682BAA938300A61C46 /* HomeView.swift */,
-				ED759C6A2BAA942D00A61C46 /* SplashView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,13 +233,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */,
-				ED759C6B2BAA942D00A61C46 /* SplashView.swift in Sources */,
+				ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */,
 				ED759C632BAA860600A61C46 /* LandingView.swift in Sources */,
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
+				ED759C772BAAC01400A61C46 /* SignUpViewModel.swift in Sources */,
+				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
 				ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */,
-				ED759C5F2BAA82EA00A61C46 /* RootViewModel.swift in Sources */,
+				ED759C6D2BAAA07D00A61C46 /* LoginViewModel.swift in Sources */,
+				ED759C752BAABC0700A61C46 /* AuthViewModel.swift in Sources */,
 				ED759C652BAA873000A61C46 /* LoginView.swift in Sources */,
 				ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,

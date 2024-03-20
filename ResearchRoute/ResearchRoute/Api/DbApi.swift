@@ -1,3 +1,5 @@
+// Not to be used directly
+
 import FirebaseFirestore
 import CodableFirebase
 
