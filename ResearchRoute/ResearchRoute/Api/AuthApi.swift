@@ -25,22 +25,30 @@ class AuthApi {
         try Auth.auth().signOut()
     }
     
+    static func delete() async throws {
+        try await getUser().delete()
+    }
+    
     static func getUser() -> User? {
         return Auth.auth().currentUser
     }
     
+    static func getUser() throws -> User {
+        guard let user = getUser() else {
+            throw AuthApiError.notLoggedIn
+        }
+        return user
+    }
+    
     static func getUid() -> String? {
-        return AuthApi.getUser()?.uid
+        return getUser()?.uid
     }
     
     static func getUid() throws -> String {
-        guard let uid = AuthApi.getUid() else {
-            throw AuthApiError.notLoggedIn
-        }
-        return uid
+        return try getUser().uid
     }
     
     static func isLoggedIn() -> Bool {
-        return AuthApi.getUser() != nil
+        return getUser() != nil
     }
 }
