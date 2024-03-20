@@ -1,18 +1,18 @@
 //
-//  HomeView.swift
+//  SetupView.swift
 //  ResearchRoute
 //
-//  Created by Andrew Jowe on 3/19/24.
+//  Created by Andrew Jowe on 3/20/24.
 //
 
 import SwiftUI
 
-struct HomeView: View {
+struct SetupView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     
     var body: some View {
         VStack {
-            Text("Home")
+            Text("Do setup / resume parser view")
             
             Button(action: {
                 userViewModel.logout()
@@ -25,5 +25,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    SetupView()
 }

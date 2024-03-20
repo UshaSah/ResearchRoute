@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject var authViewModel = AuthViewModel()
+    @StateObject var userViewModel = UserViewModel()
     
     var body: some View {
-        NavigationStack {
-            if authViewModel.isLoggedIn {
-                HomeView()
-                    .environmentObject(authViewModel)
+        NavigationView {
+            if userViewModel.isLoggedIn {
+                if userViewModel.doSetup {
+                    SetupView()
+                }
+                else {
+                    HomeView()
+                }
             }
             else {
                 LandingView()
-                    .environmentObject(authViewModel)
             }
         }
+        .environmentObject(userViewModel)
     }
 }
 

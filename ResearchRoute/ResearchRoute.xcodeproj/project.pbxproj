@@ -22,11 +22,12 @@
 		ED759C652BAA873000A61C46 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C642BAA873000A61C46 /* LoginView.swift */; };
 		ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C662BAA873A00A61C46 /* SignUpView.swift */; };
 		ED759C692BAA938300A61C46 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C682BAA938300A61C46 /* HomeView.swift */; };
-		ED759C6D2BAAA07D00A61C46 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C6C2BAAA07D00A61C46 /* LoginViewModel.swift */; };
+		ED759C6D2BAAA07D00A61C46 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C6C2BAAA07D00A61C46 /* LoginInfo.swift */; };
 		ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C702BAAA3BC00A61C46 /* AuthApi.swift */; };
 		ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C722BAAA55E00A61C46 /* ViewModel.swift */; };
-		ED759C752BAABC0700A61C46 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C742BAABC0700A61C46 /* AuthViewModel.swift */; };
-		ED759C772BAAC01400A61C46 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C762BAAC01400A61C46 /* SignUpViewModel.swift */; };
+		ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C742BAABC0700A61C46 /* UserViewModel.swift */; };
+		ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C762BAAC01400A61C46 /* SignUpInfo.swift */; };
+		ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C7A2BAAC3A400A61C46 /* SetupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,11 +44,12 @@
 		ED759C642BAA873000A61C46 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ED759C662BAA873A00A61C46 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		ED759C682BAA938300A61C46 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		ED759C6C2BAAA07D00A61C46 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ED759C6C2BAAA07D00A61C46 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
 		ED759C702BAAA3BC00A61C46 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
 		ED759C722BAAA55E00A61C46 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		ED759C742BAABC0700A61C46 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		ED759C762BAAC01400A61C46 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		ED759C742BAABC0700A61C46 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		ED759C762BAAC01400A61C46 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
+		ED759C7A2BAAC3A400A61C46 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				ED759C722BAAA55E00A61C46 /* ViewModel.swift */,
-				ED759C6C2BAAA07D00A61C46 /* LoginViewModel.swift */,
-				ED759C742BAABC0700A61C46 /* AuthViewModel.swift */,
-				ED759C762BAAC01400A61C46 /* SignUpViewModel.swift */,
+				ED759C6C2BAAA07D00A61C46 /* LoginInfo.swift */,
+				ED759C742BAABC0700A61C46 /* UserViewModel.swift */,
+				ED759C762BAAC01400A61C46 /* SignUpInfo.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,6 +150,7 @@
 				ED759C642BAA873000A61C46 /* LoginView.swift */,
 				ED759C662BAA873A00A61C46 /* SignUpView.swift */,
 				ED759C682BAA938300A61C46 /* HomeView.swift */,
+				ED759C7A2BAAC3A400A61C46 /* SetupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,13 +241,14 @@
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
-				ED759C772BAAC01400A61C46 /* SignUpViewModel.swift in Sources */,
+				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
 				ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */,
-				ED759C6D2BAAA07D00A61C46 /* LoginViewModel.swift in Sources */,
-				ED759C752BAABC0700A61C46 /* AuthViewModel.swift in Sources */,
+				ED759C6D2BAAA07D00A61C46 /* LoginInfo.swift in Sources */,
+				ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */,
 				ED759C652BAA873000A61C46 /* LoginView.swift in Sources */,
 				ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */,
+				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

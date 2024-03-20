@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel
-    @StateObject var loginViewModel = LoginViewModel()
+    @EnvironmentObject var userViewModel: UserViewModel
+    @StateObject var loginViewModel = LoginInfo()
     
     var body: some View {
         VStack {
             TextField("Email", text: $loginViewModel.email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .padding()
             
             SecureField("Password", text: $loginViewModel.password)
@@ -22,11 +24,11 @@ struct LoginView: View {
                 .padding()
             
             Button("Login") {
-                loginViewModel.login(with: authViewModel)
+                userViewModel.login(with: loginViewModel)
             }
             .padding()
             
-            Text(authViewModel.errorMessage)
+            Text(userViewModel.errorMessage)
                 .foregroundColor(.red)
                 .padding()
         }
@@ -35,5 +37,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environmentObject(AuthViewModel())
+        .environmentObject(UserViewModel())
 }
