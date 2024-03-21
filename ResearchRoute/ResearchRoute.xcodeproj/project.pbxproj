@@ -28,6 +28,10 @@
 		ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C742BAABC0700A61C46 /* UserViewModel.swift */; };
 		ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C762BAAC01400A61C46 /* SignUpInfo.swift */; };
 		ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C7A2BAAC3A400A61C46 /* SetupView.swift */; };
+		EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355C92BABA8850016154F /* ResearchPostApi.swift */; };
+		EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */; };
+		EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */; };
+		EDC355D02BABB0E20016154F /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CF2BABB0E20016154F /* ApplicationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		ED759C742BAABC0700A61C46 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		ED759C762BAAC01400A61C46 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
 		ED759C7A2BAAC3A400A61C46 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		EDC355C92BABA8850016154F /* ResearchPostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostApi.swift; sourceTree = "<group>"; };
+		EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostModel.swift; sourceTree = "<group>"; };
+		EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationApi.swift; sourceTree = "<group>"; };
+		EDC355CF2BABB0E20016154F /* ApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,8 @@
 				ED759C412BAA435C00A61C46 /* DbApi.swift */,
 				ED759C552BAA5A9500A61C46 /* StudentApi.swift */,
 				ED759C702BAAA3BC00A61C46 /* AuthApi.swift */,
+				EDC355C92BABA8850016154F /* ResearchPostApi.swift */,
+				EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -127,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				ED759C512BAA565C00A61C46 /* StudentModel.swift */,
+				EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */,
+				EDC355CF2BABB0E20016154F /* ApplicationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,17 +249,21 @@
 			files = (
 				ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */,
 				ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */,
+				EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */,
 				ED759C632BAA860600A61C46 /* LandingView.swift in Sources */,
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
+				EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */,
 				ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */,
+				EDC355D02BABB0E20016154F /* ApplicationModel.swift in Sources */,
 				ED759C6D2BAAA07D00A61C46 /* LoginInfo.swift in Sources */,
 				ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */,
 				ED759C652BAA873000A61C46 /* LoginView.swift in Sources */,
 				ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */,
+				EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */,
 				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
 			);

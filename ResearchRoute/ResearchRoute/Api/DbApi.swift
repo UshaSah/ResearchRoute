@@ -9,27 +9,34 @@ enum DbApiError: LocalizedError {
     var localizedDescription: String {
         switch self {
             case .idNotFound:
-                return NSLocalizedString("Document ID not found in type T", comment: "")
+                return NSLocalizedString("Document ID not found in collection", comment: "")
         }
     }
 }
 
-class DbApi {
-    static func create(in collection: String, data: Encodable) async throws {
+protocol DbApi {
+    static var collection: String { get }
+    associatedtype T: Codable
+}
+
+extension DbApi {
+    static func create(data: T) async throws {
         let db = Firestore.firestore()
         let collection = db.collection(collection)
         try collection.addDocument(from: data)
     }
     
-    static func read<T: Decodable>(in collection: String, id: String) async throws -> T {
-        let db = Firestore.firestore()
-        let collection = db.collection(collection)
-        let ref = collection.document(id)
+    static func read(ref: DocumentReference) async throws -> Self.T {
         let document = try await ref.getDocument()
         return try document.data(as: T.self)
     }
     
-    static func read<T: Decodable>(in collection: String, filter: @escaping (T) -> Bool) async throws -> [T] {
+    static func read(id: String) async throws -> Self.T {
+        let ref = getRef(id: id)
+        return try await read(ref: ref)
+    }
+    
+    static func read(filter: @escaping (T) -> Bool) async throws -> [Self.T] {
         let db = Firestore.firestore()
         let collection = db.collection(collection)
         let snapshot = try await collection.getDocuments()
@@ -44,33 +51,29 @@ class DbApi {
         return result
     }
     
-    static func update<T: Encodable>(in collection: String, data: T) async throws {
+    static func update(data: T) async throws {
         guard let id = getDocumentId(from: data) else {
             throw DbApiError.idNotFound
         }
         
-        let db = Firestore.firestore()
-        let collection = db.collection(collection)
-        let ref = collection.document(id)
+        let ref = getRef(id: id)
         try ref.setData(from: data)
     }
     
-    static func delete(in collection: String, data: Any) async throws {
+    static func delete(data: T) async throws {
         guard let id = getDocumentId(from: data) else {
             throw DbApiError.idNotFound
         }
         
-        try await DbApi.delete(in: collection, id: id)
+        try await delete(id: id)
     }
     
-    static func delete(in collection: String, id: String) async throws {
-        let db = Firestore.firestore()
-        let collection = db.collection(collection)
-        let ref = collection.document(id)
+    static func delete(id: String) async throws {
+        let ref = getRef(id: id)
         try await ref.delete()
     }
     
-    static func getDocumentId(from object: Any) -> String? {
+    static func getDocumentId(from object: T) -> String? {
         let mirror = Mirror(reflecting: object)
         for case let (label?, value) in mirror.children {
             if label.hasPrefix("_"), label.hasSuffix("id") {
@@ -78,5 +81,11 @@ class DbApi {
             }
         }
         return nil
+    }
+    
+    static func getRef(id: String) -> DocumentReference {
+        let db = Firestore.firestore()
+        let collectionRef = db.collection(collection)
+        return collectionRef.document(id)
     }
 }
