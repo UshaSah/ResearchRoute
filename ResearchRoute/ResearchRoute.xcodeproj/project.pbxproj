@@ -50,6 +50,9 @@
 		18C3B0962BACB14F00DDF5A9 /* WrappingStack in Frameworks */ = {isa = PBXBuildFile; productRef = 18C3B0952BACB14F00DDF5A9 /* WrappingStack */; };
 		18C3B0992BACB16300DDF5A9 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 18C3B0982BACB16300DDF5A9 /* GoogleGenerativeAI */; };
 		18C3B09D2BACC0F800DDF5A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C3B09C2BACC0F700DDF5A9 /* GoogleService-Info.plist */; };
+		18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */; };
+		18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */; };
+		18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */; };
 		ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C412BAA435C00A61C46 /* DbApi.swift */; };
 		ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C512BAA565C00A61C46 /* StudentModel.swift */; };
 		ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C552BAA5A9500A61C46 /* StudentApi.swift */; };
@@ -86,6 +89,9 @@
 		18C3B0902BACAF8B00DDF5A9 /* ResumeParserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeParserView.swift; sourceTree = "<group>"; };
 		18C3B0922BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverLetterGeneratorView.swift; sourceTree = "<group>"; };
 		18C3B09C2BACC0F700DDF5A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuView.swift; sourceTree = "<group>"; };
+		18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrView.swift; sourceTree = "<group>"; };
+		18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
 		ED759C412BAA435C00A61C46 /* DbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbApi.swift; sourceTree = "<group>"; };
 		ED759C512BAA565C00A61C46 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		ED759C552BAA5A9500A61C46 /* StudentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentApi.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 		0405BCD02BAA107600BCEEEA /* ResearchRoute */ = {
 			isa = PBXGroup;
 			children = (
+				18C3B0A22BACDEA300DDF5A9 /* OCR */,
 				ED759C5B2BAA7E6800A61C46 /* View */,
 				ED759C5A2BAA7E1500A61C46 /* ViewModel */,
 				ED759C4E2BAA4E3100A61C46 /* Model */,
@@ -186,6 +193,15 @@
 				0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		18C3B0A22BACDEA300DDF5A9 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */,
+				18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */,
+			);
+			path = OCR;
 			sourceTree = "<group>";
 		};
 		ED759C3D2BAA3F5900A61C46 /* Api */ = {
@@ -247,6 +263,7 @@
 				ED759C662BAA873A00A61C46 /* SignUpView.swift */,
 				ED759C682BAA938300A61C46 /* HomeView.swift */,
 				ED759C7A2BAAC3A400A61C46 /* SetupView.swift */,
+				18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -369,8 +386,11 @@
 				ED759C632BAA860600A61C46 /* LandingView.swift in Sources */,
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
+				18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */,
 				18C3B0832BACAEB200DDF5A9 /* EditAboutMeView.swift in Sources */,
 				18C3B0892BACAF0700DDF5A9 /* EditExperienceItemView.swift in Sources */,
+				18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */,
+				18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
