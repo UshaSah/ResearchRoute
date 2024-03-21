@@ -1,30 +1,21 @@
-class ResearchPostApi {
+import FirebaseFirestore
+
+class ResearchPostApi: DbApi {
+    typealias T = ResearchPostModel
     static let collection = "ResearchPost"
     
-    static func create(data: ResearchPostModel) async throws {
-        try await DbApi.create(in: collection, data: data)
-    }
-    
-    static func read(id: String) async throws -> ResearchPostModel {
-        return try await DbApi.read<ResearchPostModel>(in: collection, id: id)
-    }
-    
     static func read(keywords: [String]) async throws -> [ResearchPostModel] {
-        let keywords = Set(keywords)
-        return try await DbApi.read<ResearchPostModel>(in: collection) { data in
-            return !keywords.intersection(data.keywords ?? []).isEmpty
+        let toLower: ([String]) -> [String] = { words in
+            return words.map { word in
+                return word.lowercased()
+            }
         }
-    }
-    
-    static func update(data: ResearchPostModel) async throws {
-        try await DbApi.update(in: collection, data: data)
-    }
-    
-    static func delete(id: String) async throws {
-        try await DbApi.delete(in: collection, id: id)
-    }
-    
-    static func delete(data: ResearchPostModel) async throws {
-        try await DbApi.delete(in: collection, data: data)
+        
+        let keywords = Set(toLower(keywords))
+        
+        return try await read { data in
+            let other = toLower(data.keywords ?? [])
+            return !keywords.intersection(other).isEmpty
+        }
     }
 }
