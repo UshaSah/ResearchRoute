@@ -35,91 +35,96 @@ struct EditExperienceItemView: View {
     let coursesArray = ["Data Structures and Algorithms", "Operating Systems", "Artificial Intelligence", "Computer Vision", "iOS App Development"]
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 15) {
-                Text("Edit Experience")
-                    .font(.custom(titleFontName, size: titleFontSize))
-                    .foregroundStyle(titleColor)
-                    .multilineTextAlignment(.center)
-                
-                Text("* indicates required")
-                    .font(.custom(bodyFontName, size: bodyFontSize))
-                    .foregroundStyle(bodyColor)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                
-                VStack {
-                    Text("Job title*")
+        ZStack {
+            ScrollView {
+                VStack(spacing: 15) {
+                    Text("Edit Experience")
+                        .font(.custom(titleFontName, size: titleFontSize))
+                        .foregroundStyle(titleColor)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("* indicates required")
                         .font(.custom(bodyFontName, size: bodyFontSize))
                         .foregroundStyle(bodyColor)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     
-                    TextField(jobTitle, text: $jobTitle, axis: .vertical)
-                        .font(.custom(bodyFontName, size: subtitleFontSize))
-                        .foregroundStyle(bodyColor)
-                    Divider()
-                }
-                
-                VStack {
-                    Text("Company/business name*")
-                        .font(.custom(bodyFontName, size: bodyFontSize))
-                        .foregroundStyle(bodyColor)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    VStack {
+                        Text("Job title*")
+                            .font(.custom(bodyFontName, size: bodyFontSize))
+                            .foregroundStyle(bodyColor)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        
+                        TextField(jobTitle, text: $jobTitle, axis: .vertical)
+                            .font(.custom(bodyFontName, size: subtitleFontSize))
+                            .foregroundStyle(bodyColor)
+                        Divider()
+                    }
                     
-                    TextField(company, text: $company, axis: .vertical)
-                        .font(.custom(bodyFontName, size: subtitleFontSize))
-                        .foregroundStyle(bodyColor)
-                    Divider()
-                }
-                
-                VStack {
-                    Text("Start date*")
-                        .font(.custom(bodyFontName, size: bodyFontSize))
-                        .foregroundStyle(bodyColor)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    VStack {
+                        Text("Company/business name*")
+                            .font(.custom(bodyFontName, size: bodyFontSize))
+                            .foregroundStyle(bodyColor)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        
+                        TextField(company, text: $company, axis: .vertical)
+                            .font(.custom(bodyFontName, size: subtitleFontSize))
+                            .foregroundStyle(bodyColor)
+                        Divider()
+                    }
                     
-                    DatePicker("Select a date", selection: $startDate, displayedComponents: .date)
-                        .padding()
-                    Divider()
-                }
-                
-                VStack {
-                    Text("End date*")
-                        .font(.custom(bodyFontName, size: bodyFontSize))
-                        .foregroundStyle(bodyColor)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    VStack {
+                        Text("Start date*")
+                            .font(.custom(bodyFontName, size: bodyFontSize))
+                            .foregroundStyle(bodyColor)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        
+                        DatePicker("Select a date", selection: $startDate, displayedComponents: .date)
+                            .padding()
+                        Divider()
+                    }
                     
-                    DatePicker("Select a date", selection: $endDate, displayedComponents: .date)
-                        .padding()
-                    Divider()
-                }
-                
-                VStack {
-                    Text("Description")
-                        .font(.custom(bodyFontName, size: bodyFontSize))
-                        .foregroundStyle(bodyColor)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    VStack {
+                        Text("End date*")
+                            .font(.custom(bodyFontName, size: bodyFontSize))
+                            .foregroundStyle(bodyColor)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        
+                        DatePicker("Select a date", selection: $endDate, displayedComponents: .date)
+                            .padding()
+                        Divider()
+                    }
                     
-                    TextField(description, text: $description, axis: .vertical)
-                        .font(.custom(bodyFontName, size: subtitleFontSize))
-                        .foregroundStyle(bodyColor)
-                    Divider()
+                    VStack {
+                        Text("Description")
+                            .font(.custom(bodyFontName, size: bodyFontSize))
+                            .foregroundStyle(bodyColor)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        
+                        TextField(description, text: $description, axis: .vertical)
+                            .font(.custom(bodyFontName, size: subtitleFontSize))
+                            .foregroundStyle(bodyColor)
+                        Divider()
+                    }
+                    
+                    Button(action: {
+                        print("Saved")
+                    }) {
+                        Text("Save")
+                            .font(.custom(subtitleFontName, size: subtitleFontSize))
+                            .padding(.vertical, 5)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .foregroundStyle(.white)
+                            .background(titleColor)
+                            .cornerRadius(5)
+                    }
                 }
-                
-                Button(action: {
-                    print("Saved")
-                }) {
-                    Text("Save")
-                        .font(.custom(subtitleFontName, size: subtitleFontSize))
-                        .padding(.vertical, 5)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .foregroundStyle(.white)
-                        .background(titleColor)
-                        .cornerRadius(5)
-                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .padding(30)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .padding(30)
         }
+        Spacer()
+        NavigationMenuView()
+            .frame(alignment: .bottom)
     }
 }
 
