@@ -32,9 +32,7 @@ extension DbApi {
     }
     
     static func read(id: String) async throws -> Self.T {
-        let db = Firestore.firestore()
-        let collectionRef = db.collection(collection)
-        let ref = collectionRef.document(id)
+        let ref = getRef(id: id)
         return try await read(ref: ref)
     }
     
@@ -58,9 +56,7 @@ extension DbApi {
             throw DbApiError.idNotFound
         }
         
-        let db = Firestore.firestore()
-        let collection = db.collection(collection)
-        let ref = collection.document(id)
+        let ref = getRef(id: id)
         try ref.setData(from: data)
     }
     
@@ -73,9 +69,7 @@ extension DbApi {
     }
     
     static func delete(id: String) async throws {
-        let db = Firestore.firestore()
-        let collection = db.collection(collection)
-        let ref = collection.document(id)
+        let ref = getRef(id: id)
         try await ref.delete()
     }
     
@@ -87,5 +81,11 @@ extension DbApi {
             }
         }
         return nil
+    }
+    
+    static func getRef(id: String) -> DocumentReference {
+        let db = Firestore.firestore()
+        let collectionRef = db.collection(collection)
+        return collectionRef.document(id)
     }
 }
