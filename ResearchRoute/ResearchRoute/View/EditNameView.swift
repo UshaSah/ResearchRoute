@@ -62,8 +62,8 @@ struct EditNameView: View {
                     Button(action: {
                         Task {
                             print("Saved")
-                            user?.firstName = "Jane"
-                            user?.lastName = "Doe"
+                            user?.firstName = "Jane" // HELP
+                            user?.lastName = "Doe" // HELP
                             await getUser()
                             print(user?.firstName)
                             print(user?.lastName)
