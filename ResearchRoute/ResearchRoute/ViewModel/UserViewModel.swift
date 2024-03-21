@@ -22,9 +22,9 @@ class UserViewModel: ViewModel {
         }
     }
     
-    func login(with loginViewModel: LoginInfo) {
+    func login(with loginInfo: LoginInfo) {
         doTask {
-            try await AuthApi.login(email: loginViewModel.email, password: loginViewModel.password)
+            try await AuthApi.login(email: loginInfo.email, password: loginInfo.password)
         } callback: {
             self.isLoggedIn = true
         }

@@ -64,6 +64,7 @@
 		ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C742BAABC0700A61C46 /* UserViewModel.swift */; };
 		ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C762BAAC01400A61C46 /* SignUpInfo.swift */; };
 		ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C7A2BAAC3A400A61C46 /* SetupView.swift */; };
+		EDA039A02BACDB89001928DF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0399F2BACDB89001928DF /* Model.swift */; };
 		EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355C92BABA8850016154F /* ResearchPostApi.swift */; };
 		EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */; };
 		EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */; };
@@ -99,6 +100,7 @@
 		ED759C742BAABC0700A61C46 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		ED759C762BAAC01400A61C46 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
 		ED759C7A2BAAC3A400A61C46 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		EDA0399F2BACDB89001928DF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EDC355C92BABA8850016154F /* ResearchPostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostApi.swift; sourceTree = "<group>"; };
 		EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostModel.swift; sourceTree = "<group>"; };
 		EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationApi.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				ED759C512BAA565C00A61C46 /* StudentModel.swift */,
 				EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */,
 				EDC355CF2BABB0E20016154F /* ApplicationModel.swift */,
+				EDA0399F2BACDB89001928DF /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */,
 				EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */,
 				18C3B0912BACAF8B00DDF5A9 /* ResumeParserView.swift in Sources */,
+				EDA039A02BACDB89001928DF /* Model.swift in Sources */,
 				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
 				18C3B08D2BACAF2D00DDF5A9 /* EditSkillsView.swift in Sources */,
