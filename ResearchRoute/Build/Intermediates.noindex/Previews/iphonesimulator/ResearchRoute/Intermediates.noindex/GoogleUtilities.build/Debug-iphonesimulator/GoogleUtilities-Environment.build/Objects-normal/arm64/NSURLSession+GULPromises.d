@@ -1,0 +1,25 @@
+dependencies: \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/GoogleUtilities/GoogleUtilities/Environment/URLSessionPromiseWrapper/NSURLSession+GULPromises.m \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/NSURLSession+GULPromises.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/module.modulemap \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromises.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+All.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromiseError.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Always.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Any.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Async.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Await.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Catch.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Delay.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Do.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Race.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Recover.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Reduce.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Retry.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Then.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Timeout.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Validate.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Wrap.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/promises/Sources/FBLPromises/include/FBLPromise+Testing.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULURLSessionDataResponse.h

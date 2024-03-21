@@ -1,0 +1,28 @@
+{
+  "source": "/Users/rohan/Documents/WINTER 2024/ResearchRoute/ResearchRoute/ResearchRoute/ResearchRoute/View/SignUpView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "First Name"
+      },
+      {
+        "comment": "",
+        "key": "Last Name"
+      },
+      {
+        "comment": "",
+        "key": "Email"
+      },
+      {
+        "comment": "",
+        "key": "Password"
+      },
+      {
+        "comment": "",
+        "key": "Login"
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,4 @@
+module CodableFirebase {
+header "CodableFirebase-Swift.h"
+export *
+}

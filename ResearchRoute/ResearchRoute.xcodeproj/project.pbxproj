@@ -10,13 +10,17 @@
 		0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */; };
 		0405BCD62BAA107A00BCEEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0405BCD52BAA107A00BCEEEA /* Assets.xcassets */; };
 		0405BCD92BAA107A00BCEEEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */; };
+		1C8EFB3B2BABEAFF00175CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8EFB3A2BABEAFF00175CD7 /* GoogleService-Info.plist */; };
+		1C8EFB402BABF1BD00175CD7 /* ocr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EFB3E2BABF1BC00175CD7 /* ocr.swift */; };
+		1C8EFB412BABF1BD00175CD7 /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EFB3F2BABF1BD00175CD7 /* ocr_wrapper.swift */; };
+		1C8EFB432BABF52B00175CD7 /* coverletter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EFB422BABF52B00175CD7 /* coverletter.swift */; };
+		1C8EFB462BABF5C400175CD7 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 1C8EFB452BABF5C400175CD7 /* GoogleGenerativeAI */; };
 		ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C412BAA435C00A61C46 /* DbApi.swift */; };
 		ED759C462BAA44FB00A61C46 /* CodableFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = ED759C452BAA44FB00A61C46 /* CodableFirebase */; };
 		ED759C4B2BAA486D00A61C46 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED759C4A2BAA486D00A61C46 /* FirebaseAuth */; };
 		ED759C4D2BAA487C00A61C46 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED759C4C2BAA487C00A61C46 /* FirebaseFirestoreSwift */; };
 		ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C512BAA565C00A61C46 /* StudentModel.swift */; };
 		ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C552BAA5A9500A61C46 /* StudentApi.swift */; };
-		ED759C582BAA79E300A61C46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED759C572BAA79E300A61C46 /* GoogleService-Info.plist */; };
 		ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C5C2BAA7E7D00A61C46 /* RootView.swift */; };
 		ED759C632BAA860600A61C46 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C622BAA860600A61C46 /* LandingView.swift */; };
 		ED759C652BAA873000A61C46 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C642BAA873000A61C46 /* LoginView.swift */; };
@@ -39,10 +43,13 @@
 		0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchRouteApp.swift; sourceTree = "<group>"; };
 		0405BCD52BAA107A00BCEEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C8EFB3A2BABEAFF00175CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1C8EFB3E2BABF1BC00175CD7 /* ocr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ocr.swift; sourceTree = "<group>"; };
+		1C8EFB3F2BABF1BD00175CD7 /* ocr_wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
+		1C8EFB422BABF52B00175CD7 /* coverletter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coverletter.swift; sourceTree = "<group>"; };
 		ED759C412BAA435C00A61C46 /* DbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbApi.swift; sourceTree = "<group>"; };
 		ED759C512BAA565C00A61C46 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		ED759C552BAA5A9500A61C46 /* StudentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentApi.swift; sourceTree = "<group>"; };
-		ED759C572BAA79E300A61C46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED759C5C2BAA7E7D00A61C46 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		ED759C622BAA860600A61C46 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		ED759C642BAA873000A61C46 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 				ED759C462BAA44FB00A61C46 /* CodableFirebase in Frameworks */,
 				ED759C4B2BAA486D00A61C46 /* FirebaseAuth in Frameworks */,
 				ED759C4D2BAA487C00A61C46 /* FirebaseFirestoreSwift in Frameworks */,
+				1C8EFB462BABF5C400175CD7 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +85,7 @@
 		0405BCC52BAA107600BCEEEA = {
 			isa = PBXGroup;
 			children = (
-				ED759C572BAA79E300A61C46 /* GoogleService-Info.plist */,
+				1C8EFB3A2BABEAFF00175CD7 /* GoogleService-Info.plist */,
 				0405BCD02BAA107600BCEEEA /* ResearchRoute */,
 				0405BCCF2BAA107600BCEEEA /* Products */,
 				ED759C472BAA486700A61C46 /* Frameworks */,
@@ -95,6 +103,8 @@
 		0405BCD02BAA107600BCEEEA /* ResearchRoute */ = {
 			isa = PBXGroup;
 			children = (
+				1C8EFB422BABF52B00175CD7 /* coverletter.swift */,
+				1C8EFB3D2BABF18100175CD7 /* OCR */,
 				ED759C5B2BAA7E6800A61C46 /* View */,
 				ED759C5A2BAA7E1500A61C46 /* ViewModel */,
 				ED759C4E2BAA4E3100A61C46 /* Model */,
@@ -112,6 +122,15 @@
 				0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1C8EFB3D2BABF18100175CD7 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				1C8EFB3F2BABF1BD00175CD7 /* ocr_wrapper.swift */,
+				1C8EFB3E2BABF1BC00175CD7 /* ocr.swift */,
+			);
+			path = OCR;
 			sourceTree = "<group>";
 		};
 		ED759C3D2BAA3F5900A61C46 /* Api */ = {
@@ -187,6 +206,7 @@
 				ED759C452BAA44FB00A61C46 /* CodableFirebase */,
 				ED759C4A2BAA486D00A61C46 /* FirebaseAuth */,
 				ED759C4C2BAA487C00A61C46 /* FirebaseFirestoreSwift */,
+				1C8EFB452BABF5C400175CD7 /* GoogleGenerativeAI */,
 			);
 			productName = ResearchRoute;
 			productReference = 0405BCCE2BAA107600BCEEEA /* ResearchRoute.app */;
@@ -219,6 +239,7 @@
 			packageReferences = (
 				ED759C432BAA44DA00A61C46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				ED759C442BAA44FB00A61C46 /* XCRemoteSwiftPackageReference "CodableFirebase" */,
+				1C8EFB442BABF5C400175CD7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = 0405BCCF2BAA107600BCEEEA /* Products */;
 			projectDirPath = "";
@@ -236,7 +257,7 @@
 			files = (
 				0405BCD92BAA107A00BCEEEA /* Preview Assets.xcassets in Resources */,
 				0405BCD62BAA107A00BCEEEA /* Assets.xcassets in Resources */,
-				ED759C582BAA79E300A61C46 /* GoogleService-Info.plist in Resources */,
+				1C8EFB3B2BABEAFF00175CD7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,13 +277,16 @@
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
+				1C8EFB412BABF1BD00175CD7 /* ocr_wrapper.swift in Sources */,
 				EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */,
 				ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */,
 				EDC355D02BABB0E20016154F /* ApplicationModel.swift in Sources */,
+				1C8EFB432BABF52B00175CD7 /* coverletter.swift in Sources */,
 				ED759C6D2BAAA07D00A61C46 /* LoginInfo.swift in Sources */,
 				ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */,
 				ED759C652BAA873000A61C46 /* LoginView.swift in Sources */,
 				ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */,
+				1C8EFB402BABF1BD00175CD7 /* ocr.swift in Sources */,
 				EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */,
 				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
@@ -473,6 +497,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1C8EFB442BABF5C400175CD7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.8;
+			};
+		};
 		ED759C432BAA44DA00A61C46 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -492,6 +524,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1C8EFB452BABF5C400175CD7 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C8EFB442BABF5C400175CD7 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
 		ED759C452BAA44FB00A61C46 /* CodableFirebase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ED759C442BAA44FB00A61C46 /* XCRemoteSwiftPackageReference "CodableFirebase" */;

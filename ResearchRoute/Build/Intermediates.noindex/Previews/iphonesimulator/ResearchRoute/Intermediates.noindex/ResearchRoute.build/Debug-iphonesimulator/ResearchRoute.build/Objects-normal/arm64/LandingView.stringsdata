@@ -1,0 +1,16 @@
+{
+  "source": "/Users/rohan/Documents/WINTER 2024/ResearchRoute/ResearchRoute/ResearchRoute/ResearchRoute/View/LandingView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Login"
+      },
+      {
+        "comment": "",
+        "key": "Signup"
+      }
+    ]
+  },
+  "version": 1
+}

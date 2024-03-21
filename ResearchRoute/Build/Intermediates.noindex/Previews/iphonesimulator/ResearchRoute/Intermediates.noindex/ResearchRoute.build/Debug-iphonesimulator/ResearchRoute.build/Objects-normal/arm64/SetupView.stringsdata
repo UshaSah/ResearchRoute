@@ -1,0 +1,16 @@
+{
+  "source": "/Users/rohan/Documents/WINTER 2024/ResearchRoute/ResearchRoute/ResearchRoute/ResearchRoute/View/SetupView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Do setup / resume parser view"
+      },
+      {
+        "comment": "",
+        "key": "Logout"
+      }
+    ]
+  },
+  "version": 1
+}

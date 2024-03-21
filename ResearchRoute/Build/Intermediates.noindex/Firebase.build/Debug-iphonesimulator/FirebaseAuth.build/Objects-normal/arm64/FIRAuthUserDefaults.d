@@ -1,0 +1,5 @@
+dependencies: \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/firebase-ios-sdk/FirebaseAuth/Sources/Storage/FIRAuthUserDefaults.m \
+  /Users/rohan/Documents/WINTER\ 2024/ResearchRoute/ResearchRoute/ResearchRoute/Build/Intermediates.noindex/Firebase.build/Debug-iphonesimulator/FirebaseAuth.build/DerivedSources/resource_bundle_accessor.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/firebase-ios-sdk/FirebaseAuth/Sources/Storage/FIRAuthUserDefaults.h \
+  /Users/rohan/Library/Developer/Xcode/DerivedData/ResearchRoute-fxkkegqriofbhlcjfkiqyxhgeaaf/SourcePackages/checkouts/firebase-ios-sdk/FirebaseAuth/Sources/Storage/FIRAuthKeychainServices.h
