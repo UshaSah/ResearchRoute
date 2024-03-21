@@ -17,7 +17,7 @@ struct RootView: View {
                     SetupView()
                 }
                 else {
-                    ProfileView()
+                    HomeView()
                 }
             }
             else {
