@@ -42,7 +42,7 @@
 		18C3B0852BACAECF00DDF5A9 /* EditCourseworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0842BACAECF00DDF5A9 /* EditCourseworkView.swift */; };
 		18C3B0872BACAEEF00DDF5A9 /* EditEducationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0862BACAEEF00DDF5A9 /* EditEducationItemView.swift */; };
 		18C3B0892BACAF0700DDF5A9 /* EditExperienceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0882BACAF0700DDF5A9 /* EditExperienceItemView.swift */; };
-		18C3B08B2BACAF1B00DDF5A9 /* EditNameAndPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B08A2BACAF1B00DDF5A9 /* EditNameAndPictureView.swift */; };
+		18C3B08B2BACAF1B00DDF5A9 /* EditNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B08A2BACAF1B00DDF5A9 /* EditNameView.swift */; };
 		18C3B08D2BACAF2D00DDF5A9 /* EditSkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B08C2BACAF2D00DDF5A9 /* EditSkillsView.swift */; };
 		18C3B08F2BACAF7800DDF5A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B08E2BACAF7800DDF5A9 /* ProfileView.swift */; };
 		18C3B0912BACAF8B00DDF5A9 /* ResumeParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0902BACAF8B00DDF5A9 /* ResumeParserView.swift */; };
@@ -83,7 +83,7 @@
 		18C3B0842BACAECF00DDF5A9 /* EditCourseworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseworkView.swift; sourceTree = "<group>"; };
 		18C3B0862BACAEEF00DDF5A9 /* EditEducationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEducationItemView.swift; sourceTree = "<group>"; };
 		18C3B0882BACAF0700DDF5A9 /* EditExperienceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExperienceItemView.swift; sourceTree = "<group>"; };
-		18C3B08A2BACAF1B00DDF5A9 /* EditNameAndPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameAndPictureView.swift; sourceTree = "<group>"; };
+		18C3B08A2BACAF1B00DDF5A9 /* EditNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameView.swift; sourceTree = "<group>"; };
 		18C3B08C2BACAF2D00DDF5A9 /* EditSkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSkillsView.swift; sourceTree = "<group>"; };
 		18C3B08E2BACAF7800DDF5A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		18C3B0902BACAF8B00DDF5A9 /* ResumeParserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeParserView.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 				18C3B0922BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift */,
 				18C3B0862BACAEEF00DDF5A9 /* EditEducationItemView.swift */,
 				18C3B0882BACAF0700DDF5A9 /* EditExperienceItemView.swift */,
-				18C3B08A2BACAF1B00DDF5A9 /* EditNameAndPictureView.swift */,
+				18C3B08A2BACAF1B00DDF5A9 /* EditNameView.swift */,
 				18C3B08C2BACAF2D00DDF5A9 /* EditSkillsView.swift */,
 				ED759C622BAA860600A61C46 /* LandingView.swift */,
 				ED759C642BAA873000A61C46 /* LoginView.swift */,
@@ -398,7 +398,7 @@
 				18C3B08F2BACAF7800DDF5A9 /* ProfileView.swift in Sources */,
 				ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */,
 				EDC355D02BABB0E20016154F /* ApplicationModel.swift in Sources */,
-				18C3B08B2BACAF1B00DDF5A9 /* EditNameAndPictureView.swift in Sources */,
+				18C3B08B2BACAF1B00DDF5A9 /* EditNameView.swift in Sources */,
 				ED759C6D2BAAA07D00A61C46 /* LoginInfo.swift in Sources */,
 				ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */,
 				ED759C652BAA873000A61C46 /* LoginView.swift in Sources */,

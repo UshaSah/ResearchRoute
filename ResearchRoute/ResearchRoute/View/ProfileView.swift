@@ -48,7 +48,7 @@ struct ProfileView: View {
                                     .foregroundStyle(titleColor)
                             }
                             .navigationDestination(isPresented: $navigateToEditNameAndPictureView) {
-                                EditNameAndPictureView()
+                                EditNameView()
                             }
                         }
                         ResumeParserView()
@@ -85,36 +85,37 @@ struct ProfileView: View {
                             .font(.custom(subtitleFontName, size: subtitleFontSize))
                             .foregroundStyle(subtitleColor)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        VStack() {
-                            HStack(spacing: 3) {
-                                Text("Senior Software Engineer")
-                                    .font(.custom(subtitleFontName, size: 14))
-                                    .foregroundStyle(bodyColor)
+                        ForEach(user?.experience ?? [], id: \.self) { element in
+                            VStack() {
+                                HStack(spacing: 3) {
+                                    Text("Senior Software Engineer")
+                                        .font(.custom(subtitleFontName, size: 14))
+                                        .foregroundStyle(bodyColor)
+                                    
+                                    Button(action: {
+                                        print("Edit button tapped!")
+                                        navigateToEditExperienceItemView = true
+                                    }) {
+                                        Image(systemName: "square.and.pencil")
+                                            .imageScale(.medium)
+                                            .foregroundStyle(titleColor)
+                                    }
+                                    .navigationDestination(isPresented: $navigateToEditExperienceItemView) {
+                                        EditExperienceItemView()
+                                    }
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 
-                                Button(action: {
-                                    print("Edit button tapped!")
-                                    navigateToEditExperienceItemView = true
-                                }) {
-                                    Image(systemName: "square.and.pencil")
-                                        .imageScale(.medium)
-                                        .foregroundStyle(titleColor)
-                                }
-                                .navigationDestination(isPresented: $navigateToEditExperienceItemView) {
-                                    EditExperienceItemView()
-                                }
+                                Text("Google")
+                                    .font(.custom(bodyFontName, size: bodyFontSize))
+                                    .foregroundStyle(bodyColor)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                Text("Aug 2021 - Present")
+                                    .font(.custom(bodyFontName, size: bodyFontSize))
+                                    .foregroundStyle(bodyColor)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            Text("Google")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            Text("Aug 2021 - Present")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
                     
@@ -124,36 +125,37 @@ struct ProfileView: View {
                             .foregroundStyle(subtitleColor)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        VStack() {
-                            HStack(spacing: 3) {
-                                Text("University of California, Davis")
-                                    .font(.custom(subtitleFontName, size: 14))
-                                    .foregroundStyle(bodyColor)
+                        ForEach(user?.experience ?? [], id: \.self) { element in
+                            VStack() {
+                                HStack(spacing: 3) {
+                                    Text("Senior Software Engineer")
+                                        .font(.custom(subtitleFontName, size: 14))
+                                        .foregroundStyle(bodyColor)
+                                    
+                                    Button(action: {
+                                        print("Edit button tapped!")
+                                        navigateToEditExperienceItemView = true
+                                    }) {
+                                        Image(systemName: "square.and.pencil")
+                                            .imageScale(.medium)
+                                            .foregroundStyle(titleColor)
+                                    }
+                                    .navigationDestination(isPresented: $navigateToEditExperienceItemView) {
+                                        EditExperienceItemView()
+                                    }
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 
-                                Button(action: {
-                                    print("Edit button tapped!")
-                                    navigateToEditEducationItemView = true
-                                }) {
-                                    Image(systemName: "square.and.pencil")
-                                        .imageScale(.medium)
-                                        .foregroundStyle(titleColor)
-                                }
-                                .navigationDestination(isPresented: $navigateToEditEducationItemView) {
-                                    EditEducationItemView()
-                                }
+                                Text("Google")
+                                    .font(.custom(bodyFontName, size: bodyFontSize))
+                                    .foregroundStyle(bodyColor)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                Text("Aug 2021 - Present")
+                                    .font(.custom(bodyFontName, size: bodyFontSize))
+                                    .foregroundStyle(bodyColor)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            Text("Bachelor of Science, Computer Science")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            Text("Aug 2011 - Jun 2015")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
                         }
                     }
                     VStack(spacing: 3) {
@@ -177,7 +179,7 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         WrappingHStack(id: \.self, alignment: .leading, horizontalSpacing: 5, verticalSpacing: 5) {
-                            ForEach(skillsArray, id: \.self) { skill in
+                            ForEach(user?.skills ?? [], id: \.self) { skill in
                                 Text(skill)
                                     .font(.custom(bodyFontName, size: bodyFontSize))
                                     .padding(.vertical, 2)
@@ -209,7 +211,7 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         WrappingHStack(id: \.self, alignment: .leading, horizontalSpacing: 5, verticalSpacing: 5) {
-                            ForEach(coursesArray, id: \.self) { course in
+                            ForEach(user?.coursework ?? [], id: \.self) { course in
                                 Text(course)
                                     .font(.custom(bodyFontName, size: bodyFontSize))
                                     .padding(.vertical, 2)
@@ -228,9 +230,6 @@ struct ProfileView: View {
                         } catch {
                             print(error)
                         }
-                    }
-                    if user == nil {
-                        print("Could not fetch user")
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

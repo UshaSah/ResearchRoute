@@ -17,6 +17,7 @@ struct EducationModel: ModelMap {
 
 struct StudentModel: Model {
     @DocumentID var id: String?
+    //var aboutMe: String
     var firstName: String
     var lastName: String
     var majors: [String]?

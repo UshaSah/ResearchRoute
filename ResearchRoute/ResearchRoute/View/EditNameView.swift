@@ -1,9 +1,6 @@
 import SwiftUI
 
-struct EditNameAndPictureView: View {
-    @State var firstName: String = "Jane"
-    @State var lastName: String = "Doe"
-    
+struct EditNameView: View {
     let titleFontName: String = "Poppins-Bold"
     let subtitleFontName: String = "Poppins-SemiBold"
     let bodyFontName: String = "Poppins-Regular"
@@ -19,27 +16,19 @@ struct EditNameAndPictureView: View {
     let skillsArray = ["HTML", "CSS", "JavaScript", "React.js", "MongoDB", "Swift", "Angular.js", "Python"]
     let coursesArray = ["Data Structures and Algorithms", "Operating Systems", "Artificial Intelligence", "Computer Vision", "iOS App Development"]
     
+    @State var user: StudentModel? = nil
+    
     var body: some View {
+        @State var firstName: String = ""
+        @State var lastName: String = ""
+        
         ZStack {
             ScrollView {
                 VStack(spacing: 15) {
-                    Text("Edit Name and Picture")
+                    Text("Edit Name")
                         .font(.custom(titleFontName, size: titleFontSize))
                         .foregroundStyle(titleColor)
                         .multilineTextAlignment(.center)
-                    
-                    VStack(spacing: 3) {
-                        Image(systemName: "person")
-                            .font(.system(size: 90))
-                        
-                        Button(action: {
-                            print("Edit image pressed")
-                        }) {
-                            Text("Edit image")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                        }
-                    }
                     
                     Text("* indicates required")
                         .font(.custom(bodyFontName, size: bodyFontSize))
@@ -71,7 +60,14 @@ struct EditNameAndPictureView: View {
                     }
                     
                     Button(action: {
-                        print("Saved")
+                        Task {
+                            print("Saved")
+                            user?.firstName = "Jane"
+                            user?.lastName = "Doe"
+                            await getUser()
+                            print(user?.firstName)
+                            print(user?.lastName)
+                        }
                     }) {
                         Text("Save")
                             .font(.custom(subtitleFontName, size: subtitleFontSize))
@@ -86,9 +82,24 @@ struct EditNameAndPictureView: View {
                 .padding(30)
             }
         }
+        .onAppear {
+            Task {
+                do {
+                    user = try await StudentApi.read(id: AuthApi.getUid())
+                } catch {
+                    print(error)
+                }
+            }
+        }
         Spacer()
         NavigationMenuView()
             .frame(alignment: .bottom)
     }
+    func getUser() async {
+        do {
+            user = try await StudentApi.read(id: AuthApi.getUid())
+        } catch {
+            print(error)
+        }
+    }
 }
-

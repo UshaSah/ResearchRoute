@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EditAboutMeView: View {
     @State var text: String = "Existing text here"
+    @State var user: StudentModel? = nil
     
     let titleFontName: String = "Poppins-Bold"
     let subtitleFontName: String = "Poppins-SemiBold"
@@ -60,6 +61,18 @@ struct EditAboutMeView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .padding(30)
+            }
+        }
+        .onAppear {
+            Task {
+                do {
+                    user = try await StudentApi.read(id: AuthApi.getUid())
+                } catch {
+                    print(error)
+                }
+            }
+            if user == nil {
+                print("Could not fetch user")
             }
         }
         Spacer()
