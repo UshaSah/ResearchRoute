@@ -60,13 +60,22 @@ struct EditNameView: View {
                     }
                     
                     Button(action: {
+                        print(user?.firstName)
+                        print(user?.lastName)
                         Task {
-                            print("Saved")
-                            user?.firstName = "Jane" // HELP
-                            user?.lastName = "Doe" // HELP
-                            await getUser()
-                            print(user?.firstName)
-                            print(user?.lastName)
+                            do {
+                                print("Saved")
+                                user?.firstName = "Jane" // use TextField value
+                                user?.lastName = "Doe" // use TextField value
+                                await getUser()
+                                if let unwrappedUser = user {
+                                    try await StudentApi.update(data: unwrappedUser) // handle potential errors
+                                }
+                                print(user?.firstName)
+                                print(user?.lastName)
+                            } catch {
+                                print("Failed to update user: \(error)")
+                            }
                         }
                     }) {
                         Text("Save")
@@ -95,6 +104,7 @@ struct EditNameView: View {
         NavigationMenuView()
             .frame(alignment: .bottom)
     }
+    
     func getUser() async {
         do {
             user = try await StudentApi.read(id: AuthApi.getUid())
