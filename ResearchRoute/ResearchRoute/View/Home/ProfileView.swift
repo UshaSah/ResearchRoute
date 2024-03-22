@@ -42,10 +42,6 @@ struct ProfileView: View {
                         destination: EditAboutMeView()
                     )
                     
-                    BulletSection<EmptyView>(
-                        title: "Majors",
-                        content: userViewModel.studentData?.majors ?? ["majors"]
-                    )
                     
                     SectionList(
                         title: "Education",
