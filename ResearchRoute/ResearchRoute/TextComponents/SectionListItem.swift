@@ -19,7 +19,13 @@ struct SectionListItem<T: View>: View {
     var body: some View {
         VStack {
             LeftAlign {
-                SectionSubtitle(subtitle)
+                HStack {
+                    SectionSubtitle(subtitle)
+                    
+                    Image(systemName: "square.and.pencil")
+                        .imageScale(.medium)
+                        .foregroundStyle(titleColor)
+                }
             }
             
             component()

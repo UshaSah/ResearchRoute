@@ -7,11 +7,6 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "square.and.pencil")
-                    .imageScale(.medium)
-                    .foregroundStyle(titleColor)
-                    .padding(10)
-                
                 SuperTitle(userViewModel.studentData?.firstName ?? "name")
                 
                 Spacer()

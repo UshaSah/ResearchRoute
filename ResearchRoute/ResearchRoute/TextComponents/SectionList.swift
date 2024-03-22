@@ -15,7 +15,13 @@ struct SectionList<T: Hashable, V: View>: View {
     var body: some View {
         VStack {
             LeftAlign {
-                SectionTitle(title)
+                HStack {
+                    SectionTitle(title)
+                    
+                    Image(systemName: "plus")
+                        .imageScale(.medium)
+                        .foregroundStyle(titleColor)
+                }
             }
             
             ForEach(content, id: \.self) { item in
