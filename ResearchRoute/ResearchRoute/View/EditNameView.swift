@@ -60,19 +60,13 @@ struct EditNameView: View {
                     }
                     
                     Button(action: {
-                        print(user?.firstName)
-                        print(user?.lastName)
                         Task {
                             do {
-                                print("Saved")
-                                user?.firstName = "Jane" // use TextField value
-                                user?.lastName = "Doe" // use TextField value
-                                await getUser()
-                                if let unwrappedUser = user {
-                                    try await StudentApi.update(data: unwrappedUser) // handle potential errors
+                                if var obj = user {
+                                    obj.firstName = "Jane"
+                                    obj.lastName = "Doe"
+                                    try await StudentApi.update(data: obj)
                                 }
-                                print(user?.firstName)
-                                print(user?.lastName)
                             } catch {
                                 print("Failed to update user: \(error)")
                             }
