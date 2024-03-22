@@ -13,15 +13,12 @@ struct EditNameView: View {
     let subtitleColor: Color = Color(red: 58/255, green: 58/255, blue: 62/255)
     let bodyColor: Color = Color(red: 129/255, green: 136/255, blue: 152/255)
 
-    let skillsArray = ["HTML", "CSS", "JavaScript", "React.js", "MongoDB", "Swift", "Angular.js", "Python"]
-    let coursesArray = ["Data Structures and Algorithms", "Operating Systems", "Artificial Intelligence", "Computer Vision", "iOS App Development"]
-    
+    @State var firstName: String = ""
+    @State var lastName: String = ""
     @State var user: StudentModel? = nil
+    @State private var statusMessage: String = ""
     
     var body: some View {
-        @State var firstName: String = ""
-        @State var lastName: String = ""
-        
         ZStack {
             ScrollView {
                 VStack(spacing: 15) {
@@ -35,25 +32,23 @@ struct EditNameView: View {
                         .foregroundStyle(bodyColor)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("First name*")
                             .font(.custom(bodyFontName, size: bodyFontSize))
                             .foregroundStyle(bodyColor)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         
-                        TextField(firstName, text: $firstName, axis: .vertical)
+                        TextField("First name", text: $firstName)
                             .font(.custom(bodyFontName, size: subtitleFontSize))
                             .foregroundStyle(bodyColor)
                         Divider()
                     }
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Last name*")
                             .font(.custom(bodyFontName, size: bodyFontSize))
                             .foregroundStyle(bodyColor)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         
-                        TextField(lastName, text: $lastName, axis: .vertical)
+                        TextField("Last name", text: $lastName)
                             .font(.custom(bodyFontName, size: subtitleFontSize))
                             .foregroundStyle(bodyColor)
                         Divider()
@@ -61,49 +56,55 @@ struct EditNameView: View {
                     
                     Button(action: {
                         Task {
-                            do {
-                                if var obj = user {
-                                    obj.firstName = "Jane"
-                                    obj.lastName = "Doe"
-                                    try await StudentApi.update(data: obj)
-                                }
-                            } catch {
-                                print("Failed to update user: \(error)")
-                            }
+                            await saveName()
                         }
                     }) {
                         Text("Save")
                             .font(.custom(subtitleFontName, size: subtitleFontSize))
                             .padding(.vertical, 5)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .frame(maxWidth: .infinity)
                             .foregroundStyle(.white)
                             .background(titleColor)
                             .cornerRadius(5)
                     }
+
+                    Text(statusMessage)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .padding(30)
             }
         }
         .onAppear {
             Task {
-                do {
-                    user = try await StudentApi.read(id: AuthApi.getUid())
-                } catch {
-                    print(error)
-                }
+                await getUser()
             }
         }
-        Spacer()
-        NavigationMenuView()
-            .frame(alignment: .bottom)
     }
     
-    func getUser() async {
+    private func saveName() async {
+        guard var updatedUser = user else {
+            statusMessage = "User not found"
+            return
+        }
+        
+        updatedUser.firstName = firstName
+        updatedUser.lastName = lastName
+        
+        do {
+            try await StudentApi.update(data: updatedUser)
+            statusMessage = "Your changes have been successfully saved"
+            user = updatedUser  // Update local user
+        } catch {
+            statusMessage = "Error saving changes: \(error.localizedDescription)"
+        }
+    }
+
+    private func getUser() async {
         do {
             user = try await StudentApi.read(id: AuthApi.getUid())
+            firstName = user?.firstName ?? ""
+            lastName = user?.lastName ?? ""
         } catch {
-            print(error)
+            print("Error fetching user: \(error)")
         }
     }
 }

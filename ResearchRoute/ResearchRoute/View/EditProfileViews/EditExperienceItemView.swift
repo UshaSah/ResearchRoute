@@ -1,21 +1,20 @@
 //
-//  EditEducationItemView.swift
+//  EditExperienceItemView.swift
 //  Project
 //
-//  Created by apple on 2/29/24.
+//  Created by apple on 3/5/24.
 //
 
 /*
  TODO:
-- Style date picker
+ - Style date picker
  */
 
 import SwiftUI
 
-struct EditEducationItemView: View {
-    @State var school: String = "University of California, Davis"
-    @State var degree: String = "Bachelor of Science"
-    @State var fieldOfStudy: String = "Computer Science"
+struct EditExperienceItemView: View {
+    @State var jobTitle: String = "Senior Software Engineer"
+    @State var company: String = "Google"
     @State var startDate = Date()
     @State var endDate = Date()
     @State var description: String = ""
@@ -39,7 +38,7 @@ struct EditEducationItemView: View {
         ZStack {
             ScrollView {
                 VStack(spacing: 15) {
-                    Text("Edit Education")
+                    Text("Edit Experience")
                         .font(.custom(titleFontName, size: titleFontSize))
                         .foregroundStyle(titleColor)
                         .multilineTextAlignment(.center)
@@ -50,36 +49,24 @@ struct EditEducationItemView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     
                     VStack {
-                        Text("School*")
+                        Text("Job title*")
                             .font(.custom(bodyFontName, size: bodyFontSize))
                             .foregroundStyle(bodyColor)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         
-                        TextField(school, text: $school, axis: .vertical)
+                        TextField(jobTitle, text: $jobTitle, axis: .vertical)
                             .font(.custom(bodyFontName, size: subtitleFontSize))
                             .foregroundStyle(bodyColor)
                         Divider()
                     }
                     
                     VStack {
-                        Text("Degree*")
+                        Text("Company/business name*")
                             .font(.custom(bodyFontName, size: bodyFontSize))
                             .foregroundStyle(bodyColor)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         
-                        TextField(degree, text: $degree, axis: .vertical)
-                            .font(.custom(bodyFontName, size: subtitleFontSize))
-                            .foregroundStyle(bodyColor)
-                        Divider()
-                    }
-                    
-                    VStack {
-                        Text("Field of study*")
-                            .font(.custom(bodyFontName, size: bodyFontSize))
-                            .foregroundStyle(bodyColor)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        
-                        TextField(fieldOfStudy, text: $fieldOfStudy, axis: .vertical)
+                        TextField(company, text: $company, axis: .vertical)
                             .font(.custom(bodyFontName, size: subtitleFontSize))
                             .foregroundStyle(bodyColor)
                         Divider()
@@ -135,9 +122,6 @@ struct EditEducationItemView: View {
                 .padding(30)
             }
         }
-        Spacer()
-        NavigationMenuView()
-            .frame(alignment: .bottom)
     }
 }
 

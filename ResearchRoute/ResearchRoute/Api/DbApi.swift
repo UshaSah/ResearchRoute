@@ -35,9 +35,29 @@ extension DbApi {
         return try document.data(as: T.self)
     }
     
+    static func read(refs: [DocumentReference]) async throws -> [Self.T] {
+        var data: [T] = []
+        
+        for ref in refs {
+            data.append(try await read(ref: ref))
+        }
+        
+        return data
+    }
+    
     static func read(id: String) async throws -> Self.T {
         let ref = getDocumentRef(id: id)
         return try await read(ref: ref)
+    }
+    
+    static func read(ids: [String]) async throws -> [Self.T] {
+        var data: [T] = []
+        
+        for id in ids {
+            data.append(try await read(id: id))
+        }
+        
+        return data
     }
     
     static func read(filter: @escaping (T) -> Bool) async throws -> [Self.T] {
@@ -77,13 +97,7 @@ extension DbApi {
     }
     
     static func getDocumentId(from object: T) -> String? {
-        let mirror = Mirror(reflecting: object)
-        for case let (label?, value) in mirror.children {
-            if label.hasPrefix("_"), label.hasSuffix("id") {
-                return value as? String
-            }
-        }
-        return nil
+        return object.id
     }
     
     static func getDocumentRef(id: String) -> DocumentReference {

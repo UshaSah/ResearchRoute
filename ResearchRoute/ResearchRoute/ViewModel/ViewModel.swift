@@ -1,5 +1,6 @@
 import SwiftUI
 
+// Base for View Model
 class ViewModel: ObservableObject {
     @Published var errorMessage = ""
     

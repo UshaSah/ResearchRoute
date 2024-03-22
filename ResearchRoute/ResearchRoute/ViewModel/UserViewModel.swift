@@ -1,9 +1,17 @@
 import SwiftUI
 
+// To manage logged in user info
 class UserViewModel: ViewModel {
     @Published var isLoggedIn = AuthApi.isLoggedIn()
     @Published var doSetup = false
     @Published var studentData: StudentModel?
+    
+    override init() {
+        super.init()
+        if isLoggedIn {
+            self.getStudentData()
+        }
+    }
     
     func createStudentAccount(with signUpInfo: SignUpInfo) {
         doTask {
@@ -26,6 +34,7 @@ class UserViewModel: ViewModel {
         doTask {
             try await AuthApi.login(email: loginInfo.email, password: loginInfo.password)
         } callback: {
+            self.getStudentData()
             self.isLoggedIn = true
         }
     }
@@ -34,7 +43,16 @@ class UserViewModel: ViewModel {
         doTask {
             try await AuthApi.logout()
         } callback: {
+            self.studentData = nil
             self.isLoggedIn = false
+        }
+    }
+    
+    func getStudentData() {
+        doTask {
+            return try await StudentApi.read(id: AuthApi.getUid())
+        } callback: { student in
+            self.studentData = student
         }
     }
 }

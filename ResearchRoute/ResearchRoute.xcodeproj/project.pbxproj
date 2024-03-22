@@ -51,8 +51,10 @@
 		18C3B0992BACB16300DDF5A9 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 18C3B0982BACB16300DDF5A9 /* GoogleGenerativeAI */; };
 		18C3B09D2BACC0F800DDF5A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C3B09C2BACC0F700DDF5A9 /* GoogleService-Info.plist */; };
 		18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */; };
-		18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */; };
-		18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */; };
+		18C3B0A62BAD387900DDF5A9 /* ApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A52BAD387900DDF5A9 /* ApplicationView.swift */; };
+		18C3B0A82BAD443600DDF5A9 /* JobApplicationSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A72BAD443600DDF5A9 /* JobApplicationSuccessView.swift */; };
+		18C3B0AC2BAD493C00DDF5A9 /* AppliedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0AB2BAD493C00DDF5A9 /* AppliedJobsView.swift */; };
+		18C3B0AE2BAD498400DDF5A9 /* ResearchPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0AD2BAD498400DDF5A9 /* ResearchPostView.swift */; };
 		ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C412BAA435C00A61C46 /* DbApi.swift */; };
 		ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C512BAA565C00A61C46 /* StudentModel.swift */; };
 		ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C552BAA5A9500A61C46 /* StudentApi.swift */; };
@@ -68,6 +70,46 @@
 		ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C762BAAC01400A61C46 /* SignUpInfo.swift */; };
 		ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C7A2BAAC3A400A61C46 /* SetupView.swift */; };
 		EDA039A02BACDB89001928DF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0399F2BACDB89001928DF /* Model.swift */; };
+		EDA039A32BAD2CC6001928DF /* OcrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039A12BAD2CC6001928DF /* OcrView.swift */; };
+		EDA039A42BAD2CC6001928DF /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039A22BAD2CC6001928DF /* ocr_wrapper.swift */; };
+		EDA039A62BAD2E12001928DF /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039A52BAD2E12001928DF /* NavigationViewModel.swift */; };
+		EDA039C02BAD71C2001928DF /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = EDA039AC2BAD71C2001928DF /* OFL.txt */; };
+		EDA039C12BAD71C2001928DF /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039AD2BAD71C2001928DF /* Poppins-Black.ttf */; };
+		EDA039C22BAD71C2001928DF /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039AE2BAD71C2001928DF /* Poppins-BlackItalic.ttf */; };
+		EDA039C32BAD71C2001928DF /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039AF2BAD71C2001928DF /* Poppins-Bold.ttf */; };
+		EDA039C42BAD71C2001928DF /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B02BAD71C2001928DF /* Poppins-BoldItalic.ttf */; };
+		EDA039C52BAD71C2001928DF /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B12BAD71C2001928DF /* Poppins-ExtraBold.ttf */; };
+		EDA039C62BAD71C2001928DF /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B22BAD71C2001928DF /* Poppins-ExtraBoldItalic.ttf */; };
+		EDA039C72BAD71C2001928DF /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B32BAD71C2001928DF /* Poppins-ExtraLight.ttf */; };
+		EDA039C82BAD71C2001928DF /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B42BAD71C2001928DF /* Poppins-ExtraLightItalic.ttf */; };
+		EDA039C92BAD71C2001928DF /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B52BAD71C2001928DF /* Poppins-Italic.ttf */; };
+		EDA039CA2BAD71C2001928DF /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B62BAD71C2001928DF /* Poppins-Light.ttf */; };
+		EDA039CB2BAD71C2001928DF /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B72BAD71C2001928DF /* Poppins-LightItalic.ttf */; };
+		EDA039CC2BAD71C2001928DF /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B82BAD71C2001928DF /* Poppins-Medium.ttf */; };
+		EDA039CD2BAD71C2001928DF /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039B92BAD71C2001928DF /* Poppins-MediumItalic.ttf */; };
+		EDA039CE2BAD71C2001928DF /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039BA2BAD71C2001928DF /* Poppins-Regular.ttf */; };
+		EDA039CF2BAD71C2001928DF /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039BB2BAD71C2001928DF /* Poppins-SemiBold.ttf */; };
+		EDA039D02BAD71C2001928DF /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039BC2BAD71C2001928DF /* Poppins-SemiBoldItalic.ttf */; };
+		EDA039D12BAD71C2001928DF /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039BD2BAD71C2001928DF /* Poppins-Thin.ttf */; };
+		EDA039D22BAD71C2001928DF /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039BE2BAD71C2001928DF /* Poppins-ThinItalic.ttf */; };
+		EDA039D82BAD79E2001928DF /* TextSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039D72BAD79E2001928DF /* TextSection.swift */; };
+		EDA039DA2BAD81F4001928DF /* LeftAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039D92BAD81F4001928DF /* LeftAlign.swift */; };
+		EDA039DC2BAD83BB001928DF /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039DB2BAD83BB001928DF /* SectionTitle.swift */; };
+		EDA039DE2BAD845D001928DF /* FontSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039DD2BAD845D001928DF /* FontSettings.swift */; };
+		EDA039E02BAD8594001928DF /* SectionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039DF2BAD8594001928DF /* SectionBody.swift */; };
+		EDA039E22BAD8666001928DF /* BulletSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E12BAD8666001928DF /* BulletSection.swift */; };
+		EDA039E52BAD8D03001928DF /* SectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E42BAD8D02001928DF /* SectionList.swift */; };
+		EDA039E72BAD939A001928DF /* SectionSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E62BAD939A001928DF /* SectionSubtitle.swift */; };
+		EDA039EA2BAD95A8001928DF /* SectionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E92BAD95A8001928DF /* SectionListItem.swift */; };
+		EDA039EC2BAD99DD001928DF /* SectionBodyStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039EB2BAD99DD001928DF /* SectionBodyStack.swift */; };
+		EDA039EF2BADF0BD001928DF /* ResearchPostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039EE2BADF0BD001928DF /* ResearchPostCard.swift */; };
+		EDA039F12BADF372001928DF /* ResearchPostCardLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039F02BADF372001928DF /* ResearchPostCardLine.swift */; };
+		EDA039F32BADF564001928DF /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039F22BADF564001928DF /* CardList.swift */; };
+		EDA039F52BADF788001928DF /* RecommendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039F42BADF788001928DF /* RecommendedView.swift */; };
+		EDA039F72BADFF74001928DF /* AppliedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039F62BADFF74001928DF /* AppliedViewModel.swift */; };
+		EDA039F92BAE0966001928DF /* SuperTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039F82BAE0966001928DF /* SuperTitle.swift */; };
+		EDA039FB2BAE1CE3001928DF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039FA2BAE1CE3001928DF /* EmptyView.swift */; };
+		EDA039FD2BAE2820001928DF /* RecommendedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039FC2BAE2820001928DF /* RecommendedViewModel.swift */; };
 		EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355C92BABA8850016154F /* ResearchPostApi.swift */; };
 		EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */; };
 		EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */; };
@@ -90,8 +132,10 @@
 		18C3B0922BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverLetterGeneratorView.swift; sourceTree = "<group>"; };
 		18C3B09C2BACC0F700DDF5A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuView.swift; sourceTree = "<group>"; };
-		18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrView.swift; sourceTree = "<group>"; };
-		18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
+		18C3B0A52BAD387900DDF5A9 /* ApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationView.swift; sourceTree = "<group>"; };
+		18C3B0A72BAD443600DDF5A9 /* JobApplicationSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApplicationSuccessView.swift; sourceTree = "<group>"; };
+		18C3B0AB2BAD493C00DDF5A9 /* AppliedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedJobsView.swift; sourceTree = "<group>"; };
+		18C3B0AD2BAD498400DDF5A9 /* ResearchPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostView.swift; sourceTree = "<group>"; };
 		ED759C412BAA435C00A61C46 /* DbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbApi.swift; sourceTree = "<group>"; };
 		ED759C512BAA565C00A61C46 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		ED759C552BAA5A9500A61C46 /* StudentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentApi.swift; sourceTree = "<group>"; };
@@ -107,6 +151,47 @@
 		ED759C762BAAC01400A61C46 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
 		ED759C7A2BAAC3A400A61C46 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		EDA0399F2BACDB89001928DF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EDA039A12BAD2CC6001928DF /* OcrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OcrView.swift; sourceTree = "<group>"; };
+		EDA039A22BAD2CC6001928DF /* ocr_wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
+		EDA039A52BAD2E12001928DF /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		EDA039A72BAD313F001928DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EDA039AC2BAD71C2001928DF /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		EDA039AD2BAD71C2001928DF /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		EDA039AE2BAD71C2001928DF /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		EDA039AF2BAD71C2001928DF /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		EDA039B02BAD71C2001928DF /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EDA039B12BAD71C2001928DF /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EDA039B22BAD71C2001928DF /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		EDA039B32BAD71C2001928DF /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		EDA039B42BAD71C2001928DF /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		EDA039B52BAD71C2001928DF /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		EDA039B62BAD71C2001928DF /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		EDA039B72BAD71C2001928DF /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		EDA039B82BAD71C2001928DF /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		EDA039B92BAD71C2001928DF /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EDA039BA2BAD71C2001928DF /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		EDA039BB2BAD71C2001928DF /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		EDA039BC2BAD71C2001928DF /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		EDA039BD2BAD71C2001928DF /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		EDA039BE2BAD71C2001928DF /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		EDA039D72BAD79E2001928DF /* TextSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSection.swift; sourceTree = "<group>"; };
+		EDA039D92BAD81F4001928DF /* LeftAlign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlign.swift; sourceTree = "<group>"; };
+		EDA039DB2BAD83BB001928DF /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
+		EDA039DD2BAD845D001928DF /* FontSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSettings.swift; sourceTree = "<group>"; };
+		EDA039DF2BAD8594001928DF /* SectionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBody.swift; sourceTree = "<group>"; };
+		EDA039E12BAD8666001928DF /* BulletSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletSection.swift; sourceTree = "<group>"; };
+		EDA039E42BAD8D02001928DF /* SectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionList.swift; sourceTree = "<group>"; };
+		EDA039E62BAD939A001928DF /* SectionSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSubtitle.swift; sourceTree = "<group>"; };
+		EDA039E92BAD95A8001928DF /* SectionListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionListItem.swift; path = ResearchRoute/TextComponents/SectionListItem.swift; sourceTree = SOURCE_ROOT; };
+		EDA039EB2BAD99DD001928DF /* SectionBodyStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBodyStack.swift; sourceTree = "<group>"; };
+		EDA039EE2BADF0BD001928DF /* ResearchPostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostCard.swift; sourceTree = "<group>"; };
+		EDA039F02BADF372001928DF /* ResearchPostCardLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostCardLine.swift; sourceTree = "<group>"; };
+		EDA039F22BADF564001928DF /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		EDA039F42BADF788001928DF /* RecommendedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedView.swift; sourceTree = "<group>"; };
+		EDA039F62BADFF74001928DF /* AppliedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedViewModel.swift; sourceTree = "<group>"; };
+		EDA039F82BAE0966001928DF /* SuperTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTitle.swift; sourceTree = "<group>"; };
+		EDA039FA2BAE1CE3001928DF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		EDA039FC2BAE2820001928DF /* RecommendedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedViewModel.swift; sourceTree = "<group>"; };
 		EDC355C92BABA8850016154F /* ResearchPostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostApi.swift; sourceTree = "<group>"; };
 		EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostModel.swift; sourceTree = "<group>"; };
 		EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationApi.swift; sourceTree = "<group>"; };
@@ -175,6 +260,10 @@
 		0405BCD02BAA107600BCEEEA /* ResearchRoute */ = {
 			isa = PBXGroup;
 			children = (
+				EDA039ED2BADF092001928DF /* CardComponents */,
+				EDA039BF2BAD71C2001928DF /* Fonts */,
+				EDA039A82BAD390C001928DF /* TextComponents */,
+				EDA039A72BAD313F001928DF /* Info.plist */,
 				18C3B0A22BACDEA300DDF5A9 /* OCR */,
 				ED759C5B2BAA7E6800A61C46 /* View */,
 				ED759C5A2BAA7E1500A61C46 /* ViewModel */,
@@ -198,8 +287,8 @@
 		18C3B0A22BACDEA300DDF5A9 /* OCR */ = {
 			isa = PBXGroup;
 			children = (
-				18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */,
-				18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */,
+				EDA039A22BAD2CC6001928DF /* ocr_wrapper.swift */,
+				EDA039A12BAD2CC6001928DF /* OcrView.swift */,
 			);
 			path = OCR;
 			sourceTree = "<group>";
@@ -241,6 +330,10 @@
 				ED759C6C2BAAA07D00A61C46 /* LoginInfo.swift */,
 				ED759C742BAABC0700A61C46 /* UserViewModel.swift */,
 				ED759C762BAAC01400A61C46 /* SignUpInfo.swift */,
+				EDA039A52BAD2E12001928DF /* NavigationViewModel.swift */,
+				EDA039F62BADFF74001928DF /* AppliedViewModel.swift */,
+				EDA039FA2BAE1CE3001928DF /* EmptyView.swift */,
+				EDA039FC2BAE2820001928DF /* RecommendedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,24 +341,115 @@
 		ED759C5B2BAA7E6800A61C46 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EDA039AB2BAD6F01001928DF /* Home */,
+				EDA039AA2BAD6EB9001928DF /* Landing */,
+				EDA039A92BAD3919001928DF /* EditProfileViews */,
 				ED759C5C2BAA7E7D00A61C46 /* RootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDA039A82BAD390C001928DF /* TextComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EDA039E82BAD943F001928DF /* Atomic */,
+				EDA039D72BAD79E2001928DF /* TextSection.swift */,
+				EDA039EB2BAD99DD001928DF /* SectionBodyStack.swift */,
+				EDA039E12BAD8666001928DF /* BulletSection.swift */,
+				EDA039E42BAD8D02001928DF /* SectionList.swift */,
+				EDA039E92BAD95A8001928DF /* SectionListItem.swift */,
+			);
+			path = TextComponents;
+			sourceTree = "<group>";
+		};
+		EDA039A92BAD3919001928DF /* EditProfileViews */ = {
+			isa = PBXGroup;
+			children = (
 				18C3B0822BACAEB200DDF5A9 /* EditAboutMeView.swift */,
 				18C3B0842BACAECF00DDF5A9 /* EditCourseworkView.swift */,
-				18C3B0922BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift */,
 				18C3B0862BACAEEF00DDF5A9 /* EditEducationItemView.swift */,
 				18C3B0882BACAF0700DDF5A9 /* EditExperienceItemView.swift */,
 				18C3B08A2BACAF1B00DDF5A9 /* EditNameView.swift */,
 				18C3B08C2BACAF2D00DDF5A9 /* EditSkillsView.swift */,
+			);
+			path = EditProfileViews;
+			sourceTree = "<group>";
+		};
+		EDA039AA2BAD6EB9001928DF /* Landing */ = {
+			isa = PBXGroup;
+			children = (
 				ED759C622BAA860600A61C46 /* LandingView.swift */,
 				ED759C642BAA873000A61C46 /* LoginView.swift */,
+				ED759C662BAA873A00A61C46 /* SignUpView.swift */,
+				ED759C7A2BAAC3A400A61C46 /* SetupView.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		EDA039AB2BAD6F01001928DF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18C3B0922BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift */,
 				18C3B08E2BACAF7800DDF5A9 /* ProfileView.swift */,
 				18C3B0902BACAF8B00DDF5A9 /* ResumeParserView.swift */,
-				ED759C662BAA873A00A61C46 /* SignUpView.swift */,
+				18C3B0A52BAD387900DDF5A9 /* ApplicationView.swift */,
+				18C3B0A72BAD443600DDF5A9 /* JobApplicationSuccessView.swift */,
+				18C3B0AB2BAD493C00DDF5A9 /* AppliedJobsView.swift */,
+				18C3B0AD2BAD498400DDF5A9 /* ResearchPostView.swift */,
 				ED759C682BAA938300A61C46 /* HomeView.swift */,
-				ED759C7A2BAAC3A400A61C46 /* SetupView.swift */,
 				18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */,
+				EDA039F42BADF788001928DF /* RecommendedView.swift */,
 			);
-			path = View;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EDA039BF2BAD71C2001928DF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDA039AC2BAD71C2001928DF /* OFL.txt */,
+				EDA039AD2BAD71C2001928DF /* Poppins-Black.ttf */,
+				EDA039AE2BAD71C2001928DF /* Poppins-BlackItalic.ttf */,
+				EDA039AF2BAD71C2001928DF /* Poppins-Bold.ttf */,
+				EDA039B02BAD71C2001928DF /* Poppins-BoldItalic.ttf */,
+				EDA039B12BAD71C2001928DF /* Poppins-ExtraBold.ttf */,
+				EDA039B22BAD71C2001928DF /* Poppins-ExtraBoldItalic.ttf */,
+				EDA039B32BAD71C2001928DF /* Poppins-ExtraLight.ttf */,
+				EDA039B42BAD71C2001928DF /* Poppins-ExtraLightItalic.ttf */,
+				EDA039B52BAD71C2001928DF /* Poppins-Italic.ttf */,
+				EDA039B62BAD71C2001928DF /* Poppins-Light.ttf */,
+				EDA039B72BAD71C2001928DF /* Poppins-LightItalic.ttf */,
+				EDA039B82BAD71C2001928DF /* Poppins-Medium.ttf */,
+				EDA039B92BAD71C2001928DF /* Poppins-MediumItalic.ttf */,
+				EDA039BA2BAD71C2001928DF /* Poppins-Regular.ttf */,
+				EDA039BB2BAD71C2001928DF /* Poppins-SemiBold.ttf */,
+				EDA039BC2BAD71C2001928DF /* Poppins-SemiBoldItalic.ttf */,
+				EDA039BD2BAD71C2001928DF /* Poppins-Thin.ttf */,
+				EDA039BE2BAD71C2001928DF /* Poppins-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EDA039E82BAD943F001928DF /* Atomic */ = {
+			isa = PBXGroup;
+			children = (
+				EDA039DD2BAD845D001928DF /* FontSettings.swift */,
+				EDA039D92BAD81F4001928DF /* LeftAlign.swift */,
+				EDA039DB2BAD83BB001928DF /* SectionTitle.swift */,
+				EDA039E62BAD939A001928DF /* SectionSubtitle.swift */,
+				EDA039DF2BAD8594001928DF /* SectionBody.swift */,
+				EDA039F82BAE0966001928DF /* SuperTitle.swift */,
+			);
+			path = Atomic;
+			sourceTree = "<group>";
+		};
+		EDA039ED2BADF092001928DF /* CardComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EDA039EE2BADF0BD001928DF /* ResearchPostCard.swift */,
+				EDA039F02BADF372001928DF /* ResearchPostCardLine.swift */,
+				EDA039F22BADF564001928DF /* CardList.swift */,
+			);
+			path = CardComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,9 +548,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA039C82BAD71C2001928DF /* Poppins-ExtraLightItalic.ttf in Resources */,
+				EDA039CB2BAD71C2001928DF /* Poppins-LightItalic.ttf in Resources */,
 				0405BCD92BAA107A00BCEEEA /* Preview Assets.xcassets in Resources */,
+				EDA039D22BAD71C2001928DF /* Poppins-ThinItalic.ttf in Resources */,
+				EDA039CE2BAD71C2001928DF /* Poppins-Regular.ttf in Resources */,
+				EDA039C52BAD71C2001928DF /* Poppins-ExtraBold.ttf in Resources */,
+				EDA039D02BAD71C2001928DF /* Poppins-SemiBoldItalic.ttf in Resources */,
+				EDA039CF2BAD71C2001928DF /* Poppins-SemiBold.ttf in Resources */,
 				0405BCD62BAA107A00BCEEEA /* Assets.xcassets in Resources */,
+				EDA039CC2BAD71C2001928DF /* Poppins-Medium.ttf in Resources */,
+				EDA039C32BAD71C2001928DF /* Poppins-Bold.ttf in Resources */,
+				EDA039C62BAD71C2001928DF /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				EDA039C02BAD71C2001928DF /* OFL.txt in Resources */,
+				EDA039CA2BAD71C2001928DF /* Poppins-Light.ttf in Resources */,
+				EDA039C92BAD71C2001928DF /* Poppins-Italic.ttf in Resources */,
+				EDA039CD2BAD71C2001928DF /* Poppins-MediumItalic.ttf in Resources */,
+				EDA039D12BAD71C2001928DF /* Poppins-Thin.ttf in Resources */,
 				18C3B09D2BACC0F800DDF5A9 /* GoogleService-Info.plist in Resources */,
+				EDA039C72BAD71C2001928DF /* Poppins-ExtraLight.ttf in Resources */,
+				EDA039C22BAD71C2001928DF /* Poppins-BlackItalic.ttf in Resources */,
+				EDA039C12BAD71C2001928DF /* Poppins-Black.ttf in Resources */,
+				EDA039C42BAD71C2001928DF /* Poppins-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,35 +583,58 @@
 				18C3B0852BACAECF00DDF5A9 /* EditCourseworkView.swift in Sources */,
 				ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */,
 				18C3B0932BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift in Sources */,
+				EDA039E22BAD8666001928DF /* BulletSection.swift in Sources */,
+				EDA039F72BADFF74001928DF /* AppliedViewModel.swift in Sources */,
+				EDA039A62BAD2E12001928DF /* NavigationViewModel.swift in Sources */,
+				EDA039D82BAD79E2001928DF /* TextSection.swift in Sources */,
 				ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */,
 				EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */,
 				18C3B0872BACAEEF00DDF5A9 /* EditEducationItemView.swift in Sources */,
+				EDA039FB2BAE1CE3001928DF /* EmptyView.swift in Sources */,
 				ED759C632BAA860600A61C46 /* LandingView.swift in Sources */,
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
-				18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */,
+				EDA039EA2BAD95A8001928DF /* SectionListItem.swift in Sources */,
 				18C3B0832BACAEB200DDF5A9 /* EditAboutMeView.swift in Sources */,
+				EDA039DA2BAD81F4001928DF /* LeftAlign.swift in Sources */,
+				18C3B0AC2BAD493C00DDF5A9 /* AppliedJobsView.swift in Sources */,
 				18C3B0892BACAF0700DDF5A9 /* EditExperienceItemView.swift in Sources */,
 				18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */,
-				18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
+				EDA039FD2BAE2820001928DF /* RecommendedViewModel.swift in Sources */,
+				EDA039E02BAD8594001928DF /* SectionBody.swift in Sources */,
+				EDA039A32BAD2CC6001928DF /* OcrView.swift in Sources */,
+				EDA039A42BAD2CC6001928DF /* ocr_wrapper.swift in Sources */,
+				18C3B0A62BAD387900DDF5A9 /* ApplicationView.swift in Sources */,
+				EDA039E72BAD939A001928DF /* SectionSubtitle.swift in Sources */,
+				EDA039DC2BAD83BB001928DF /* SectionTitle.swift in Sources */,
+				EDA039F92BAE0966001928DF /* SuperTitle.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
 				EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */,
 				18C3B08F2BACAF7800DDF5A9 /* ProfileView.swift in Sources */,
 				ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */,
 				EDC355D02BABB0E20016154F /* ApplicationModel.swift in Sources */,
+				EDA039EF2BADF0BD001928DF /* ResearchPostCard.swift in Sources */,
+				EDA039EC2BAD99DD001928DF /* SectionBodyStack.swift in Sources */,
 				18C3B08B2BACAF1B00DDF5A9 /* EditNameView.swift in Sources */,
 				ED759C6D2BAAA07D00A61C46 /* LoginInfo.swift in Sources */,
 				ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */,
 				ED759C652BAA873000A61C46 /* LoginView.swift in Sources */,
 				ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */,
+				18C3B0A82BAD443600DDF5A9 /* JobApplicationSuccessView.swift in Sources */,
 				EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */,
 				18C3B0912BACAF8B00DDF5A9 /* ResumeParserView.swift in Sources */,
+				EDA039E52BAD8D03001928DF /* SectionList.swift in Sources */,
 				EDA039A02BACDB89001928DF /* Model.swift in Sources */,
+				EDA039DE2BAD845D001928DF /* FontSettings.swift in Sources */,
+				18C3B0AE2BAD498400DDF5A9 /* ResearchPostView.swift in Sources */,
 				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
+				EDA039F52BADF788001928DF /* RecommendedView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
+				EDA039F32BADF564001928DF /* CardList.swift in Sources */,
 				18C3B08D2BACAF2D00DDF5A9 /* EditSkillsView.swift in Sources */,
+				EDA039F12BADF372001928DF /* ResearchPostCardLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +771,9 @@
 				DEVELOPMENT_TEAM = 8B962782PK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResearchRoute/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -575,9 +801,9 @@
 				DEVELOPMENT_TEAM = 8B962782PK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResearchRoute/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;

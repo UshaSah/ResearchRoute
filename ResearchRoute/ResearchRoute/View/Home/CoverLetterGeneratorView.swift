@@ -11,15 +11,22 @@ import GoogleGenerativeAI
 import FirebaseFirestore
 
 struct CoverLetterGeneratorView: View {
+    @EnvironmentObject var userViewModel: UserViewModel
+    
     @State private var coverLetter: String = ""
-    var student: StudentModel
+
+    var student: StudentModel? {
+        return userViewModel.studentData
+    }
     
     var body: some View {
         VStack {
             Text("Cover letter: \(coverLetter)")
             Button("Generate Cover Letter") {
                 Task {
-                    coverLetter = await generateCoverLetter(for: student)
+                    if let student = student {
+                        coverLetter = await generateCoverLetter(for: student)
+                    }
                 }
             }
         }
