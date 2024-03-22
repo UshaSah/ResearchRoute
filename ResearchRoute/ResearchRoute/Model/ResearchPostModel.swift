@@ -1,6 +1,6 @@
 import FirebaseFirestore
 
-struct ResearchPostModel: Codable {
+struct ResearchPostModel: Model {
     @DocumentID var id: String?
     var title: String
     var faculty: [String]

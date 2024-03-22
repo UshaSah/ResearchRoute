@@ -1,6 +1,6 @@
 import FirebaseFirestore
 
-struct ExperienceModel: Codable, Hashable {
+struct ExperienceModel: ModelMap {
     var title: String
     var organizationName: String
     var description: String
@@ -8,15 +8,16 @@ struct ExperienceModel: Codable, Hashable {
     var endDate: Timestamp
 }
 
-struct EducationModel: Codable, Hashable {
+struct EducationModel: ModelMap {
     var degree: String
     var university: String
     var startDate: Timestamp
     var endDate: Timestamp
 }
 
-struct StudentModel: Codable {
+struct StudentModel: Model {
     @DocumentID var id: String?
+    //var aboutMe: String
     var firstName: String
     var lastName: String
     var majors: [String]?

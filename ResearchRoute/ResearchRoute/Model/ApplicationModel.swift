@@ -1,6 +1,6 @@
 import FirebaseFirestore
 
-struct ApplicationModel: Codable {
+struct ApplicationModel: Model {
     @DocumentID var id: String?
     var applicant: DocumentReference
     var post: DocumentReference
