@@ -10,27 +10,38 @@ import VisionKit
 struct OcrView: View {
     @State private var startScanning = false
     @State private var scanText = ""
-    //    @State private var showSignInPage = false // To show the fallback option
-    @State private var useDataScanner = false
+    @State private var navigateToProfessorView = false // Added for navigation control
     
     var body: some View {
         VStack(spacing: 0) {
-            DataScanner(startScanning: $startScanning, scanText: $scanText)
-                .frame(height: 400)
-         
-            Text(scanText)
-                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
-                .background(in: Rectangle())
-                .backgroundStyle(Color(uiColor: .systemGray6))
-         
-        }
-        .task {
             if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
-                startScanning.toggle()
+                DataScanner(startScanning: $startScanning, scanText: $scanText)
+                    .frame(height: 400)
+            } else {
+                Text("Scanning not supported or unavailable.")
+                    .foregroundColor(.secondary)
+                    .padding()
             }
+
+            Text(scanText)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color(uiColor: .systemGray6))
+            
+            NavigationLink(destination: ProfessorView(), isActive: $navigateToProfessorView) {
+                EmptyView()
+            }
+        }
+        .onChange(of: scanText) { newValue in
+            if !newValue.isEmpty {
+                navigateToProfessorView = true // Now correctly using a separate variable for navigation
+            }
+        }
+        .onAppear {
+            startScanning = DataScannerViewController.isSupported && DataScannerViewController.isAvailable
         }
     }
 }
+
 
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {

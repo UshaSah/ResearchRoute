@@ -53,6 +53,8 @@
 		18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */; };
 		18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */; };
 		18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */; };
+		A5A7A0402BAD658A009A0E44 /* ProfResearchJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7A03F2BAD658A009A0E44 /* ProfResearchJobsView.swift */; };
+		A5A7A0422BAD65A2009A0E44 /* ProfessorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7A0412BAD65A2009A0E44 /* ProfessorView.swift */; };
 		ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C412BAA435C00A61C46 /* DbApi.swift */; };
 		ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C512BAA565C00A61C46 /* StudentModel.swift */; };
 		ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C552BAA5A9500A61C46 /* StudentApi.swift */; };
@@ -92,6 +94,9 @@
 		18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuView.swift; sourceTree = "<group>"; };
 		18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrView.swift; sourceTree = "<group>"; };
 		18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
+		A5A7A03F2BAD658A009A0E44 /* ProfResearchJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfResearchJobsView.swift; sourceTree = "<group>"; };
+		A5A7A0412BAD65A2009A0E44 /* ProfessorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorView.swift; sourceTree = "<group>"; };
+		A5A7A0432BAD6934009A0E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ED759C412BAA435C00A61C46 /* DbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbApi.swift; sourceTree = "<group>"; };
 		ED759C512BAA565C00A61C46 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		ED759C552BAA5A9500A61C46 /* StudentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentApi.swift; sourceTree = "<group>"; };
@@ -175,6 +180,7 @@
 		0405BCD02BAA107600BCEEEA /* ResearchRoute */ = {
 			isa = PBXGroup;
 			children = (
+				A5A7A0432BAD6934009A0E44 /* Info.plist */,
 				18C3B0A22BACDEA300DDF5A9 /* OCR */,
 				ED759C5B2BAA7E6800A61C46 /* View */,
 				ED759C5A2BAA7E1500A61C46 /* ViewModel */,
@@ -264,6 +270,8 @@
 				ED759C682BAA938300A61C46 /* HomeView.swift */,
 				ED759C7A2BAAC3A400A61C46 /* SetupView.swift */,
 				18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */,
+				A5A7A03F2BAD658A009A0E44 /* ProfResearchJobsView.swift */,
+				A5A7A0412BAD65A2009A0E44 /* ProfessorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +390,7 @@
 				18C3B0932BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift in Sources */,
 				ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */,
 				EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */,
+				A5A7A0402BAD658A009A0E44 /* ProfResearchJobsView.swift in Sources */,
 				18C3B0872BACAEEF00DDF5A9 /* EditEducationItemView.swift in Sources */,
 				ED759C632BAA860600A61C46 /* LandingView.swift in Sources */,
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
@@ -392,6 +401,7 @@
 				18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */,
 				18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
+				A5A7A0422BAD65A2009A0E44 /* ProfessorView.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
 				EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */,
@@ -542,9 +552,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ResearchRoute/Preview Content\"";
-				DEVELOPMENT_TEAM = 8B962782PK;
+				DEVELOPMENT_TEAM = 7MP6P54JG9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResearchRoute/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "for scanning";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -556,7 +568,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.ucdavis.cs.ecs189e.ResearchRoute.Andrew;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ucdavis.cs.ecs189e.ResearchRoute.Ethan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -572,9 +584,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ResearchRoute/Preview Content\"";
-				DEVELOPMENT_TEAM = 8B962782PK;
+				DEVELOPMENT_TEAM = 7MP6P54JG9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResearchRoute/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "for scanning";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -586,7 +600,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.ucdavis.cs.ecs189e.ResearchRoute.Andrew;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ucdavis.cs.ecs189e.ResearchRoute.Ethan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
