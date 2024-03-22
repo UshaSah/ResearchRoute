@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAuth
 import PDFKit
 import MobileCoreServices
 import GoogleGenerativeAI
@@ -23,9 +24,10 @@ struct ResumeParserView: View {
     @State private var isLoadingSkills = false
     @State private var isLoadingCoursework = false
     
-    @State var user: StudentModel?
+    @State var user: StudentModel? = nil
     
     var body: some View {
+        
         VStack {
             if isLoadingFirstName {
                 ProgressView("Loading first name...")
@@ -63,7 +65,7 @@ struct ResumeParserView: View {
                 Text("Upload PDF")
             }
             .sheet(isPresented: $isPickerPresented) {
-                DocumentPicker(document: $document, text: $text, firstName: $firstName, experience: $experience, education: $education, skills: $skills, coursework: $coursework, user: $user, isLoadingName: $isLoadingFirstName, isLoadingExperience: $isLoadingExperience, isLoadingEducation: $isLoadingEducation, isLoadingSkills: $isLoadingSkills, isLoadingCoursework: $isLoadingCoursework, resumeIsValid: $resumeIsValid)
+                DocumentPicker(document: $document, text: $text, firstName: $firstName, lastName: $lastName, experience: $experience, education: $education, skills: $skills, coursework: $coursework, user: $user, isLoadingName: $isLoadingFirstName, isLoadingExperience: $isLoadingExperience, isLoadingEducation: $isLoadingEducation, isLoadingSkills: $isLoadingSkills, isLoadingCoursework: $isLoadingCoursework, resumeIsValid: $resumeIsValid)
             }
         }
         .onAppear() {
@@ -82,6 +84,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
     @Binding var document: PDFDocument?
     @Binding var text: String
     @Binding var firstName: String
+    @Binding var lastName: String
     @Binding var experience: String
     @Binding var education: String
     @Binding var skills: String
@@ -96,7 +99,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
     @Binding var resumeIsValid: String
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(parent: self, user: user)
     }
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
@@ -109,10 +112,13 @@ struct DocumentPicker: UIViewControllerRepresentable {
 
     class Coordinator: NSObject, UIDocumentPickerDelegate {
         var parent: DocumentPicker
-
-        init(_ parent: DocumentPicker) {
-            self.parent = parent
+        var user: StudentModel?
+//        var user: User
+        init(parent: DocumentPicker, user: StudentModel?) {
+                self.parent = parent
+                self.user = user
         }
+            
 
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
             guard let url = urls.first else { return }
@@ -183,7 +189,10 @@ struct DocumentPicker: UIViewControllerRepresentable {
             parent.coursework = await extractCoursework()
             parent.isLoadingCoursework = false
             
-            fillFirstName()
+            let task = Task {
+                await fillFirstName()
+            }
+
             fillSkills()
             fillCoursework()
         }
@@ -204,9 +213,31 @@ struct DocumentPicker: UIViewControllerRepresentable {
             return ""
         }
         
-        func fillFirstName() {
-            parent.user?.firstName = parent.firstName
+        func fillFirstName() async {
+            Task {
+                do {
+                    if var obj = user {
+                        obj.firstName = "Jane"
+                        obj.lastName = "Doe"
+                        try await StudentApi.update(data: obj)
+                    }
+                } catch {
+                    print("Failed to update user: \(error)")
+                }
+            }
         }
+//            let updatedStudent = StudentModel(firstName: parent.firstName, lastName: parent.lastName)
+////            let new_name = parent.firstName
+//            do {
+//                try await StudentApi.update(data: updatedStudent)
+//                print("Student's name updated successfully!")
+//            } catch {
+//                print("Error updating student's name")
+//            }
+//
+//        }
+        
+       
         
         func extractLastName() async -> String {
             let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
@@ -228,7 +259,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
             let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
             let model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
 
-            let prompt = "Given the following resume, write a list of all the experience items in it. Separate the job title, company, description, start date, and end date with a semicolon (DO NOT put a caret or semicolon after the last experience item). Any fields that don't exist should be an empty string. Separate each experience item with a caret. Return \"error\" (without quotes) if you could not find any experience items. For example, your response should look like this: Software Engineer; Google; Worked on Google Cloud team; Aug 2011; Jun 2015^Software Engineer Intern; Amazon; Worked on AWS team; Aug 2008; Jun 2009^ [START RESUME] \(parent.text)"
+            let prompt = "Given the following resume, write a list of all the experience items in it. Separate the job title, company, description, start date, and end date with a semicolon (DO NOT put a caret or semicolon after the last experience item). Any fields that don't exist should be an empty string. Separate each experience item with a caret. Return \"error\" (without quotes) if you could not find any experience items. For example, your response should look like this: Software Engineer;Google;Worked on Google Cloud team;Aug 2011;Jun 2015^Software Engineer Intern;Amazon;Worked on AWS team;Aug 2008;Jun 2009 [START RESUME] \(parent.text)"
             do {
                 let response = try await model.generateContent(prompt)
                 if let responseText = response.text {
@@ -244,7 +275,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
             let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
             let model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
 
-            let prompt = "Given the following resume, write a list of all the education items in it. Separate the school, degree, field of study, description, start date, and end date with a semicolon. Any fields that don't exist should be an empty string. Separate each education item with a caret. Return \"error\" (without quotes) if you could not find any education items. For example, your response should look like this: University of California, Davis; Bachelor of Science, Computer Science; Aug 2011; Jun 2015^Harvard University; Master of Science, Computer Science; Aug 2015; Jun 2017^ [START RESUME] \(parent.text)"
+            let prompt = "Given the following resume, write a list of all the education items in it. Separate the school, degree, field of study, description, start date, and end date with a semicolon. Any fields that don't exist should be an empty string. Separate each education item with a caret. Return \"error\" (without quotes) if you could not find any education items. For example, your response should look like this: University of California, Davis;Bachelor of Science, Computer Science;Aug 2011;Jun 2015^Harvard University;Master of Science, Computer Science;Aug 2015;Jun 2017 [START RESUME] \(parent.text)"
             do {
                 let response = try await model.generateContent(prompt)
                 if let responseText = response.text {
@@ -260,7 +291,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
             let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
             let model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
 
-            let prompt = "Given the following resume, write a list of all the skills with each item being separated by a semicolon and space. Return \"error\" (without quotes) if you could not find any skills. For example, your response should look like this: Microsoft Excel; HTML; CSS; Microsoft Word [START RESUME] \(parent.text)"
+            let prompt = "Given the following resume, write a list of all the skills with each item being separated by a semicolon. Return \"error\" (without quotes) if you could not find any skills. For example, your response should look like this: Microsoft Excel;HTML;CSS;Microsoft Word [START RESUME] \(parent.text)"
             do {
                 let response = try await model.generateContent(prompt)
                 if let responseText = response.text {
@@ -285,7 +316,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
             let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
             let model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
 
-            let prompt = "Given the following resume, write a list of all the coursework with each item being separated by a semicolon and space. Return \"error\" (without quotes) if you could not find any quotes. For example, your response should look like this: Introduction to C++; Operating Systems; Web Development; Classical Physics [START RESUME] \(parent.text)"
+            let prompt = "Given the following resume, write a list of all the coursework with each item being separated by a semicolon and space. Return \"error\" (without quotes) if you could not find any quotes. For example, your response should look like this: Introduction to C++;Operating Systems;Web Development;Classical Physics [START RESUME] \(parent.text)"
             do {
                 let response = try await model.generateContent(prompt)
                 if let responseText = response.text {

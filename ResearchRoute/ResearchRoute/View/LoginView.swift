@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @StateObject var loginViewModel = LoginInfo()
+    @State private var navigateToProfileView: Bool = false
     
     var body: some View {
         VStack {
@@ -23,10 +24,15 @@ struct LoginView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             
-            Button("Login") {
+            Button(action: {
                 userViewModel.login(with: loginViewModel)
+                navigateToProfileView = true
+            }) {
+                Text("Login")
             }
-            .padding()
+            .navigationDestination(isPresented: $navigateToProfileView) {
+                ProfileView()
+            }
             
             Text(userViewModel.errorMessage)
                 .foregroundColor(.red)
