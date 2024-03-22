@@ -1,24 +1,6 @@
-//
-//  EditExperienceItemView.swift
-//  Project
-//
-//  Created by apple on 3/5/24.
-//
-
-/*
- TODO:
- - Style date picker
- */
-
 import SwiftUI
 
-struct EditExperienceItemView: View {
-    @State var jobTitle: String = "Senior Software Engineer"
-    @State var company: String = "Google"
-    @State var startDate = Date()
-    @State var endDate = Date()
-    @State var description: String = ""
-    
+struct EditNameView: View {
     let titleFontName: String = "Poppins-Bold"
     let subtitleFontName: String = "Poppins-SemiBold"
     let bodyFontName: String = "Poppins-Regular"
@@ -34,11 +16,16 @@ struct EditExperienceItemView: View {
     let skillsArray = ["HTML", "CSS", "JavaScript", "React.js", "MongoDB", "Swift", "Angular.js", "Python"]
     let coursesArray = ["Data Structures and Algorithms", "Operating Systems", "Artificial Intelligence", "Computer Vision", "iOS App Development"]
     
+    @State var user: StudentModel? = nil
+    
     var body: some View {
+        @State var firstName: String = ""
+        @State var lastName: String = ""
+        
         ZStack {
             ScrollView {
                 VStack(spacing: 15) {
-                    Text("Edit Experience")
+                    Text("Edit Name")
                         .font(.custom(titleFontName, size: titleFontSize))
                         .foregroundStyle(titleColor)
                         .multilineTextAlignment(.center)
@@ -49,65 +36,41 @@ struct EditExperienceItemView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     
                     VStack {
-                        Text("Job title*")
+                        Text("First name*")
                             .font(.custom(bodyFontName, size: bodyFontSize))
                             .foregroundStyle(bodyColor)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         
-                        TextField(jobTitle, text: $jobTitle, axis: .vertical)
+                        TextField(firstName, text: $firstName, axis: .vertical)
                             .font(.custom(bodyFontName, size: subtitleFontSize))
                             .foregroundStyle(bodyColor)
                         Divider()
                     }
                     
                     VStack {
-                        Text("Company/business name*")
+                        Text("Last name*")
                             .font(.custom(bodyFontName, size: bodyFontSize))
                             .foregroundStyle(bodyColor)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         
-                        TextField(company, text: $company, axis: .vertical)
-                            .font(.custom(bodyFontName, size: subtitleFontSize))
-                            .foregroundStyle(bodyColor)
-                        Divider()
-                    }
-                    
-                    VStack {
-                        Text("Start date*")
-                            .font(.custom(bodyFontName, size: bodyFontSize))
-                            .foregroundStyle(bodyColor)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        
-                        DatePicker("Select a date", selection: $startDate, displayedComponents: .date)
-                            .padding()
-                        Divider()
-                    }
-                    
-                    VStack {
-                        Text("End date*")
-                            .font(.custom(bodyFontName, size: bodyFontSize))
-                            .foregroundStyle(bodyColor)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        
-                        DatePicker("Select a date", selection: $endDate, displayedComponents: .date)
-                            .padding()
-                        Divider()
-                    }
-                    
-                    VStack {
-                        Text("Description")
-                            .font(.custom(bodyFontName, size: bodyFontSize))
-                            .foregroundStyle(bodyColor)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        
-                        TextField(description, text: $description, axis: .vertical)
+                        TextField(lastName, text: $lastName, axis: .vertical)
                             .font(.custom(bodyFontName, size: subtitleFontSize))
                             .foregroundStyle(bodyColor)
                         Divider()
                     }
                     
                     Button(action: {
-                        print("Saved")
+                        Task {
+                            do {
+                                if var obj = user {
+                                    obj.firstName = "Jane"
+                                    obj.lastName = "Doe"
+                                    try await StudentApi.update(data: obj)
+                                }
+                            } catch {
+                                print("Failed to update user: \(error)")
+                            }
+                        }
                     }) {
                         Text("Save")
                             .font(.custom(subtitleFontName, size: subtitleFontSize))
@@ -122,12 +85,25 @@ struct EditExperienceItemView: View {
                 .padding(30)
             }
         }
+        .onAppear {
+            Task {
+                do {
+                    user = try await StudentApi.read(id: AuthApi.getUid())
+                } catch {
+                    print(error)
+                }
+            }
+        }
         Spacer()
         NavigationMenuView()
             .frame(alignment: .bottom)
     }
-}
-
-#Preview {
-    EditEducationItemView()
+    
+    func getUser() async {
+        do {
+            user = try await StudentApi.read(id: AuthApi.getUid())
+        } catch {
+            print(error)
+        }
+    }
 }

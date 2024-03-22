@@ -6,7 +6,8 @@ import UniformTypeIdentifiers
 
 struct ResumeParserView: View {
     @State private var text: String = ""
-    @State private var name: String = ""
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
     @State private var experience: String = ""
     @State private var education: String = ""
     @State private var skills: String = ""
@@ -16,7 +17,7 @@ struct ResumeParserView: View {
     @State private var resumeIsValid: String = ""
     
     // Loading state for each section
-    @State private var isLoadingName = false
+    @State private var isLoadingFirstName = false
     @State private var isLoadingExperience = false
     @State private var isLoadingEducation = false
     @State private var isLoadingSkills = false
@@ -26,10 +27,10 @@ struct ResumeParserView: View {
     
     var body: some View {
         VStack {
-            if isLoadingName {
-                ProgressView("Loading Name...")
+            if isLoadingFirstName {
+                ProgressView("Loading first name...")
             } else {
-                Text("Name: \(name)")
+                Text("First name: \(firstName)")
             }
             
             if isLoadingExperience {
@@ -62,11 +63,17 @@ struct ResumeParserView: View {
                 Text("Upload PDF")
             }
             .sheet(isPresented: $isPickerPresented) {
-                DocumentPicker(document: $document, text: $text, name: $name, experience: $experience, education: $education, skills: $skills, coursework: $coursework, user: $user, isLoadingName: $isLoadingName, isLoadingExperience: $isLoadingExperience, isLoadingEducation: $isLoadingEducation, isLoadingSkills: $isLoadingSkills, isLoadingCoursework: $isLoadingCoursework, resumeIsValid: $resumeIsValid)
+                DocumentPicker(document: $document, text: $text, firstName: $firstName, experience: $experience, education: $education, skills: $skills, coursework: $coursework, user: $user, isLoadingName: $isLoadingFirstName, isLoadingExperience: $isLoadingExperience, isLoadingEducation: $isLoadingEducation, isLoadingSkills: $isLoadingSkills, isLoadingCoursework: $isLoadingCoursework, resumeIsValid: $resumeIsValid)
             }
         }
         .onAppear() {
-            
+            Task {
+                do {
+                    user = try await StudentApi.read(id: AuthApi.getUid())
+                } catch {
+                    print(error)
+                }
+            }
         }
     }
 }
@@ -74,7 +81,7 @@ struct ResumeParserView: View {
 struct DocumentPicker: UIViewControllerRepresentable {
     @Binding var document: PDFDocument?
     @Binding var text: String
-    @Binding var name: String
+    @Binding var firstName: String
     @Binding var experience: String
     @Binding var education: String
     @Binding var skills: String
@@ -157,7 +164,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
         
         func extractAll() async {
             parent.isLoadingName = true
-            parent.name = await extractName()
+            parent.firstName = await extractFirstName()
             parent.isLoadingName = false
             
             parent.isLoadingExperience = true
@@ -176,16 +183,16 @@ struct DocumentPicker: UIViewControllerRepresentable {
             parent.coursework = await extractCoursework()
             parent.isLoadingCoursework = false
             
-            fillName()
+            fillFirstName()
             fillSkills()
             fillCoursework()
         }
         
-        func extractName() async -> String {
+        func extractFirstName() async -> String {
             let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
             let model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
 
-            let prompt = "Given the following resume, get the full name but do not include the middle name if there is one (e.g. Jane Doe). Return \"error\" (without quotes) if you could not find the full name. [START RESUME] \(parent.text)"
+            let prompt = "Given the following resume, get the first name (e.g. Jane). Return \"error\" (without quotes) if you could not find the full name. [START RESUME] \(parent.text)"
             do {
                 let response = try await model.generateContent(prompt)
                 if let responseText = response.text {
@@ -197,9 +204,24 @@ struct DocumentPicker: UIViewControllerRepresentable {
             return ""
         }
         
-        func fillName() {
-            print("Name: \(parent.name)")
-            //parent.user?.name = parent.name // Fix parent.user?.name not getting updated
+        func fillFirstName() {
+            parent.user?.firstName = parent.firstName
+        }
+        
+        func extractLastName() async -> String {
+            let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
+            let model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
+
+            let prompt = "Given the following resume, get the last name (e.g. Doe). Return \"error\" (without quotes) if you could not find the full name. [START RESUME] \(parent.text)"
+            do {
+                let response = try await model.generateContent(prompt)
+                if let responseText = response.text {
+                    return responseText
+                }
+            } catch {
+                print("Error: \(error)")
+            }
+            return ""
         }
         
         func extractExperience() async -> String {
@@ -251,14 +273,12 @@ struct DocumentPicker: UIViewControllerRepresentable {
         }
         
         func fillSkills() {
-            print("Skills: \(parent.skills)") // Remove this line once I figure out why parent.skills is always empty when fillSkills() starts running even after extractSkills() is finished running
-            /*
+            print("Skills: \(parent.skills)")
             let newSkills = parent.skills.split(separator: ";").map { String($0.trimmingCharacters(in: .whitespaces)) }
-            parent.user?.skills.append(contentsOf: newSkills)
+            parent.user?.skills = newSkills
             for skill in parent.user?.skills ?? [] {
                 print("Skill: \(skill)")
             }
-             */
         }
         
         func extractCoursework() async -> String {
@@ -279,13 +299,11 @@ struct DocumentPicker: UIViewControllerRepresentable {
         
         func fillCoursework() {
             print("Coursework: \(parent.coursework)")
-            /*
             let newCoursework = parent.coursework.split(separator: ";").map { String($0.trimmingCharacters(in: .whitespaces)) }
-            parent.user?.courses.append(contentsOf: newCoursework)
-            for course in parent.user?.courses ?? [] {
+            parent.user?.coursework = newCoursework
+            for course in parent.user?.coursework ?? [] {
                 print("Course: \(course)")
             }
-             */
         }
     }
 }

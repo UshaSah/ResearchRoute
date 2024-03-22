@@ -16,14 +16,18 @@ enum DbApiError: LocalizedError {
 
 protocol DbApi {
     static var collection: String { get }
-    associatedtype T: Codable
+    associatedtype T: Model
 }
 
 extension DbApi {
     static func create(data: T) async throws {
-        let db = Firestore.firestore()
-        let collection = db.collection(collection)
-        try collection.addDocument(from: data)
+        if data.id != nil {
+            try await update(data: data)
+        }
+        else {
+            let ref = getCollectionRef()
+            try ref.addDocument(from: data)
+        }
     }
     
     static func read(ref: DocumentReference) async throws -> Self.T {
@@ -32,14 +36,13 @@ extension DbApi {
     }
     
     static func read(id: String) async throws -> Self.T {
-        let ref = getRef(id: id)
+        let ref = getDocumentRef(id: id)
         return try await read(ref: ref)
     }
     
     static func read(filter: @escaping (T) -> Bool) async throws -> [Self.T] {
-        let db = Firestore.firestore()
-        let collection = db.collection(collection)
-        let snapshot = try await collection.getDocuments()
+        let ref = getCollectionRef()
+        let snapshot = try await ref.getDocuments()
         var result: [T] = []
         
         for document in snapshot.documents {
@@ -56,7 +59,7 @@ extension DbApi {
             throw DbApiError.idNotFound
         }
         
-        let ref = getRef(id: id)
+        let ref = getDocumentRef(id: id)
         try ref.setData(from: data)
     }
     
@@ -69,7 +72,7 @@ extension DbApi {
     }
     
     static func delete(id: String) async throws {
-        let ref = getRef(id: id)
+        let ref = getDocumentRef(id: id)
         try await ref.delete()
     }
     
@@ -83,9 +86,13 @@ extension DbApi {
         return nil
     }
     
-    static func getRef(id: String) -> DocumentReference {
+    static func getDocumentRef(id: String) -> DocumentReference {
+        let ref = getCollectionRef()
+        return ref.document(id)
+    }
+    
+    static func getCollectionRef() -> CollectionReference {
         let db = Firestore.firestore()
-        let collectionRef = db.collection(collection)
-        return collectionRef.document(id)
+        return db.collection(collection)
     }
 }
