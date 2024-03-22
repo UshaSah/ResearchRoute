@@ -53,6 +53,10 @@
 		18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */; };
 		18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */; };
 		18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */; };
+		18C3B0A62BAD387900DDF5A9 /* ApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A52BAD387900DDF5A9 /* ApplicationView.swift */; };
+		18C3B0A82BAD443600DDF5A9 /* JobApplicationSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A72BAD443600DDF5A9 /* JobApplicationSuccessView.swift */; };
+		18C3B0AC2BAD493C00DDF5A9 /* AppliedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0AB2BAD493C00DDF5A9 /* AppliedJobsView.swift */; };
+		18C3B0AE2BAD498400DDF5A9 /* RecommendedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0AD2BAD498400DDF5A9 /* RecommendedProjectsView.swift */; };
 		ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C412BAA435C00A61C46 /* DbApi.swift */; };
 		ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C512BAA565C00A61C46 /* StudentModel.swift */; };
 		ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C552BAA5A9500A61C46 /* StudentApi.swift */; };
@@ -92,6 +96,10 @@
 		18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuView.swift; sourceTree = "<group>"; };
 		18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrView.swift; sourceTree = "<group>"; };
 		18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
+		18C3B0A52BAD387900DDF5A9 /* ApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationView.swift; sourceTree = "<group>"; };
+		18C3B0A72BAD443600DDF5A9 /* JobApplicationSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApplicationSuccessView.swift; sourceTree = "<group>"; };
+		18C3B0AB2BAD493C00DDF5A9 /* AppliedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedJobsView.swift; sourceTree = "<group>"; };
+		18C3B0AD2BAD498400DDF5A9 /* RecommendedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedProjectsView.swift; sourceTree = "<group>"; };
 		ED759C412BAA435C00A61C46 /* DbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbApi.swift; sourceTree = "<group>"; };
 		ED759C512BAA565C00A61C46 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		ED759C552BAA5A9500A61C46 /* StudentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentApi.swift; sourceTree = "<group>"; };
@@ -260,6 +268,10 @@
 				ED759C642BAA873000A61C46 /* LoginView.swift */,
 				18C3B08E2BACAF7800DDF5A9 /* ProfileView.swift */,
 				18C3B0902BACAF8B00DDF5A9 /* ResumeParserView.swift */,
+				18C3B0A52BAD387900DDF5A9 /* ApplicationView.swift */,
+				18C3B0A72BAD443600DDF5A9 /* JobApplicationSuccessView.swift */,
+				18C3B0AB2BAD493C00DDF5A9 /* AppliedJobsView.swift */,
+				18C3B0AD2BAD498400DDF5A9 /* RecommendedProjectsView.swift */,
 				ED759C662BAA873A00A61C46 /* SignUpView.swift */,
 				ED759C682BAA938300A61C46 /* HomeView.swift */,
 				ED759C7A2BAAC3A400A61C46 /* SetupView.swift */,
@@ -388,10 +400,12 @@
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
 				18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */,
 				18C3B0832BACAEB200DDF5A9 /* EditAboutMeView.swift in Sources */,
+				18C3B0AC2BAD493C00DDF5A9 /* AppliedJobsView.swift in Sources */,
 				18C3B0892BACAF0700DDF5A9 /* EditExperienceItemView.swift in Sources */,
 				18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */,
 				18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
+				18C3B0A62BAD387900DDF5A9 /* ApplicationView.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
 				EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */,
@@ -403,9 +417,11 @@
 				ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */,
 				ED759C652BAA873000A61C46 /* LoginView.swift in Sources */,
 				ED759C672BAA873A00A61C46 /* SignUpView.swift in Sources */,
+				18C3B0A82BAD443600DDF5A9 /* JobApplicationSuccessView.swift in Sources */,
 				EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */,
 				18C3B0912BACAF8B00DDF5A9 /* ResumeParserView.swift in Sources */,
 				EDA039A02BACDB89001928DF /* Model.swift in Sources */,
+				18C3B0AE2BAD498400DDF5A9 /* RecommendedProjectsView.swift in Sources */,
 				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
 				18C3B08D2BACAF2D00DDF5A9 /* EditSkillsView.swift in Sources */,

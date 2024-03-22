@@ -58,7 +58,7 @@ struct NavigationMenuView: View {
                 .frame(maxWidth: .infinity)
             }
             .navigationDestination(isPresented: $navigateToRecommendedProjectsView) {
-                //StudentView()
+                RecommendedProjectsView()
             }
             
             Button(action: {
@@ -75,7 +75,7 @@ struct NavigationMenuView: View {
                 .frame(maxWidth: .infinity)
             }
             .navigationDestination(isPresented: $navigateToAppliedProjectsView) {
-                //StudentView()
+                AppliedJobsView()
             }
             
             Button(action: {

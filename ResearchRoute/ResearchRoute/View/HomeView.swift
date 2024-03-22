@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @State var navigateToProfileView: Bool = false
+    @State var navigateToJobApplicationView: Bool = false
     
     var body: some View {
         VStack {
@@ -19,6 +20,13 @@ struct HomeView: View {
                     navigateToProfileView = true
                 }, label: {
                     Text("Navigate to profile view")
+                })
+            }
+            NavigationLink(destination: ApplicationView(), isActive: $navigateToJobApplicationView) {
+                Button(action: {
+                    navigateToJobApplicationView = true
+                }, label: {
+                    Text("Navigate to job application view")
                 })
             }
             Button(action: {
