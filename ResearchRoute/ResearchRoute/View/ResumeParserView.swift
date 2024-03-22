@@ -26,18 +26,7 @@ struct ResumeParserView: View {
     @State var user: StudentModel?
     
     var body: some View {
-        func parseResume() {
-            Task {
-                let lastName = await DocumentextractLastName()
-                let experience = await extractExperience()
-
-                // Now you have extracted information, you can further process it or update UI
-                print("Last Name:", lastName)
-                print("Experience:", experience)
-                
-                // Update UI or perform further processing here
-            }
-        }
+        
         VStack {
             if isLoadingFirstName {
                 ProgressView("Loading first name...")
@@ -75,7 +64,7 @@ struct ResumeParserView: View {
                 Text("Upload PDF")
             }
             .sheet(isPresented: $isPickerPresented) {
-                DocumentPicker(document: $document, text: $text, firstName: $firstName, experience: $experience, education: $education, skills: $skills, coursework: $coursework, user: $user, isLoadingName: $isLoadingFirstName, isLoadingExperience: $isLoadingExperience, isLoadingEducation: $isLoadingEducation, isLoadingSkills: $isLoadingSkills, isLoadingCoursework: $isLoadingCoursework, resumeIsValid: $resumeIsValid)
+                DocumentPicker(document: $document, text: $text, firstName: $firstName, lastName: $lastName, experience: $experience, education: $education, skills: $skills, coursework: $coursework, user: $user, isLoadingName: $isLoadingFirstName, isLoadingExperience: $isLoadingExperience, isLoadingEducation: $isLoadingEducation, isLoadingSkills: $isLoadingSkills, isLoadingCoursework: $isLoadingCoursework, resumeIsValid: $resumeIsValid)
             }
         }
         .onAppear() {
@@ -94,6 +83,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
     @Binding var document: PDFDocument?
     @Binding var text: String
     @Binding var firstName: String
+    @Binding var lastName: String
     @Binding var experience: String
     @Binding var education: String
     @Binding var skills: String
@@ -195,7 +185,10 @@ struct DocumentPicker: UIViewControllerRepresentable {
             parent.coursework = await extractCoursework()
             parent.isLoadingCoursework = false
             
-            fillFirstName()
+            let task = Task {
+                await fillFirstName()
+            }
+
             fillSkills()
             fillCoursework()
         }
@@ -216,9 +209,18 @@ struct DocumentPicker: UIViewControllerRepresentable {
             return ""
         }
         
-        func fillFirstName() {
-            parent.user?.firstName = parent.firstName
+        func fillFirstName() async {
+            let updatedStudent = StudentModel(firstName: parent.firstName, lastName: parent.lastName)
+//            let new_name = parent.firstName
+            do {
+                try await StudentApi.update(data: updatedStudent)
+                print("Student's name updated successfully!")
+            } catch {
+                print("Error updating student's name")
+            }
+            
         }
+       
         
         func extractLastName() async -> String {
             let apiKey = "AIzaSyA7KtP-leaQgC2MU_4TCSjLELXSRvRjTyQ"
@@ -322,13 +324,3 @@ struct DocumentPicker: UIViewControllerRepresentable {
 
     }
 }
-
-//mutating func updateAttributes() {
-//    Task {
-//        self.education = await extractEducation()
-//        self.experience = await extractExperience()
-//        self.coursework = await extractCoursework()
-//        self.skills = await extractSkills()
-//        self.keywords = await extractKeywords()
-//    }
-//}
