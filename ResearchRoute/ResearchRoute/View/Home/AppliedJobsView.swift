@@ -34,7 +34,7 @@ struct AppliedJobsView: View {
                         }
                     )
                 
-                CardList(["1", "2"]) { item in
+                CardList(appliedViewModel.posts) { item in
                     Card(post: ResearchPostModel(title: "Research Position", faculty: ["Sam King"]), appliedDate: nil)
                 }
             }

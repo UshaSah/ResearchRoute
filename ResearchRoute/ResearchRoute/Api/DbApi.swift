@@ -97,13 +97,7 @@ extension DbApi {
     }
     
     static func getDocumentId(from object: T) -> String? {
-        let mirror = Mirror(reflecting: object)
-        for case let (label?, value) in mirror.children {
-            if label.hasPrefix("_"), label.hasSuffix("id") {
-                return value as? String
-            }
-        }
-        return nil
+        return object.id
     }
     
     static func getDocumentRef(id: String) -> DocumentReference {

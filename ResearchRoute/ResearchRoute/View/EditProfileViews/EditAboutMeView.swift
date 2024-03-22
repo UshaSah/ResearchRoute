@@ -1,33 +1,20 @@
-//
-//  EditAboutMeView.swift
-//  Project
-//
-//  Created by apple on 2/29/24.
-//
-
 import SwiftUI
 
 struct EditAboutMeView: View {
-    @State var text: String = "Existing text here"
-    @State var user: StudentModel? = nil
-    
+    @EnvironmentObject var userViewModel: UserViewModel
+    @State private var text: String = ""
+    @State private var statusMessage: String = ""
+
+    // Font and style settings
     let titleFontName: String = "Poppins-Bold"
-    let subtitleFontName: String = "Poppins-SemiBold"
     let bodyFontName: String = "Poppins-Regular"
 
     let titleFontSize: CGFloat = 24
-    let subtitleFontSize: CGFloat = 18
-    let bodyFontSize: CGFloat = 12
+    let bodyFontSize: CGFloat = 18
 
     let titleColor: Color = Color(red: 1/255, green: 159/255, blue: 171/255)
-    let subtitleColor: Color = Color(red: 58/255, green: 58/255, blue: 62/255)
     let bodyColor: Color = Color(red: 129/255, green: 136/255, blue: 152/255)
 
-    let skillsArray = ["HTML", "CSS", "JavaScript", "React.js", "MongoDB", "Swift", "Angular.js", "Python"]
-    let coursesArray = ["Data Structures and Algorithms", "Operating Systems", "Artificial Intelligence", "Computer Vision", "iOS App Development"]
-    
-    @State private var statusMessage: String = ""
-    
     var body: some View {
         ZStack {
             ScrollView {
@@ -36,44 +23,53 @@ struct EditAboutMeView: View {
                         .font(.custom(titleFontName, size: titleFontSize))
                         .foregroundStyle(titleColor)
                         .multilineTextAlignment(.center)
-                    
-                    VStack {
-                        TextField(text, text: $text, axis: .vertical)
-                            .font(.custom(bodyFontName, size: subtitleFontSize))
-                            .foregroundStyle(bodyColor)
-                        Divider()
-                    }
-                    
+
+                    TextField("About Me", text: $text)
+                        .font(.custom(bodyFontName, size: bodyFontSize))
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(5)
+
                     Button(action: {
-                        print("Saved")
-                        statusMessage = "Your changes have been successfully saved"
+                        Task {
+                            await saveAboutMe()
+                        }
                     }) {
                         Text("Save")
-                            .font(.custom(subtitleFontName, size: subtitleFontSize))
-                            .padding(.vertical, 5)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .foregroundStyle(.white)
+                            .font(.custom(bodyFontName, size: bodyFontSize))
+                            .padding()
                             .background(titleColor)
+                            .foregroundColor(.white)
                             .cornerRadius(5)
                     }
-                    
+
                     Text(statusMessage)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding(30)
+                .padding()
             }
         }
         .onAppear {
-            Task {
-                do {
-                    user = try await StudentApi.read(id: AuthApi.getUid())
-                } catch {
-                    print(error)
-                }
+            if let aboutMe = userViewModel.studentData?.aboutMe {
+                text = aboutMe
             }
-            if user == nil {
-                print("Could not fetch user")
-            }
+        }
+    }
+
+    private func saveAboutMe() async {
+        guard var updatedUser = userViewModel.studentData else {
+            statusMessage = "User not found"
+            return
+        }
+        
+        print(updatedUser.id ?? "None")
+        updatedUser.aboutMe = text
+
+        do {
+            try await StudentApi.update(data: updatedUser)
+            statusMessage = "Your changes have been successfully saved"
+            userViewModel.studentData?.aboutMe = text  // Update local view model
+        } catch {
+            statusMessage = "Error saving changes: \(error.localizedDescription)"
         }
     }
 }
