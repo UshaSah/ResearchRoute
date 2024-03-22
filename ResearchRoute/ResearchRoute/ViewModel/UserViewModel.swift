@@ -1,5 +1,6 @@
 import SwiftUI
 
+// To manage logged in user info
 class UserViewModel: ViewModel {
     @Published var isLoggedIn = AuthApi.isLoggedIn()
     @Published var doSetup = false

@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct TextSection: View {
+struct TextSection<T: View>: View {
     let title: String
     let content: String
+    var destination: T? = nil
     
     var body: some View {
         VStack {
@@ -17,9 +18,11 @@ struct TextSection: View {
                 HStack {
                     SectionTitle(title)
                     
-                    Image(systemName: "square.and.pencil")
-                        .imageScale(.medium)
-                        .foregroundStyle(titleColor)
+                    NavigationLink(destination: destination) {
+                        Image(systemName: "square.and.pencil")
+                            .imageScale(.medium)
+                            .foregroundStyle(titleColor)
+                    }
                 }
             }
             
@@ -31,5 +34,5 @@ struct TextSection: View {
 }
 
 #Preview {
-    TextSection(title: "Title", content: "Content")
+    TextSection(title: "Title", content: "Content", destination: LandingView())
 }

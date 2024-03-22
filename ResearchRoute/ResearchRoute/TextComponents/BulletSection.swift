@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct BulletSection: View {
+struct BulletSection<T: View>: View {
     let pointStyle = "-"
     
     let title: String
     let content: [String]
+    var destination: T? = nil
     
     var body: some View {
         VStack {
@@ -19,9 +20,11 @@ struct BulletSection: View {
                 HStack {
                     SectionTitle(title)
                     
-                    Image(systemName: "square.and.pencil")
-                        .imageScale(.medium)
-                        .foregroundStyle(titleColor)
+                    NavigationLink(destination: destination) {
+                        Image(systemName: "square.and.pencil")
+                            .imageScale(.medium)
+                            .foregroundStyle(titleColor)
+                    }
                 }
             }
             
@@ -35,5 +38,5 @@ struct BulletSection: View {
 }
 
 #Preview {
-    BulletSection(title: "Title", content: ["Hello", "World"])
+    BulletSection(title: "Title", content: ["Hello", "World"], destination: LandingView())
 }

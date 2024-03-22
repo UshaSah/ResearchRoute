@@ -21,10 +21,6 @@ struct SectionListItem<T: View>: View {
             LeftAlign {
                 HStack {
                     SectionSubtitle(subtitle)
-                    
-                    Image(systemName: "square.and.pencil")
-                        .imageScale(.medium)
-                        .foregroundStyle(titleColor)
                 }
             }
             

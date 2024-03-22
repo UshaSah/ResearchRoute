@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct SectionList<T: Hashable, V: View>: View {
+struct SectionList<T: Hashable, V: View, W: View>: View {
     let title: String
     let content: [T]
+    let destination: W
     let component: (T) -> SectionListItem<V>
     
     var body: some View {
@@ -18,9 +19,11 @@ struct SectionList<T: Hashable, V: View>: View {
                 HStack {
                     SectionTitle(title)
                     
-                    Image(systemName: "plus")
-                        .imageScale(.medium)
-                        .foregroundStyle(titleColor)
+                    NavigationLink(destination: destination) {
+                        Image(systemName: "square.and.pencil")
+                            .imageScale(.medium)
+                            .foregroundStyle(titleColor)
+                    }
                 }
             }
             
@@ -32,7 +35,7 @@ struct SectionList<T: Hashable, V: View>: View {
 }
 
 #Preview {
-    SectionList(title: "List", content: ["1", "2", "3"]) { item in
+    SectionList(title: "List", content: ["1", "2", "3"], destination: EmptyView()) { item in
         SectionListItem("Item") {
             LeftAlign {
                 Text(item)
