@@ -93,6 +93,15 @@
 		EDA039D12BAD71C2001928DF /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039BD2BAD71C2001928DF /* Poppins-Thin.ttf */; };
 		EDA039D22BAD71C2001928DF /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA039BE2BAD71C2001928DF /* Poppins-ThinItalic.ttf */; };
 		EDA039D82BAD79E2001928DF /* TextSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039D72BAD79E2001928DF /* TextSection.swift */; };
+		EDA039DA2BAD81F4001928DF /* LeftAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039D92BAD81F4001928DF /* LeftAlign.swift */; };
+		EDA039DC2BAD83BB001928DF /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039DB2BAD83BB001928DF /* SectionTitle.swift */; };
+		EDA039DE2BAD845D001928DF /* FontSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039DD2BAD845D001928DF /* FontSettings.swift */; };
+		EDA039E02BAD8594001928DF /* SectionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039DF2BAD8594001928DF /* SectionBody.swift */; };
+		EDA039E22BAD8666001928DF /* BulletSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E12BAD8666001928DF /* BulletSection.swift */; };
+		EDA039E52BAD8D03001928DF /* SectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E42BAD8D02001928DF /* SectionList.swift */; };
+		EDA039E72BAD939A001928DF /* SectionSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E62BAD939A001928DF /* SectionSubtitle.swift */; };
+		EDA039EA2BAD95A8001928DF /* SectionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039E92BAD95A8001928DF /* SectionListItem.swift */; };
+		EDA039EC2BAD99DD001928DF /* SectionBodyStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039EB2BAD99DD001928DF /* SectionBodyStack.swift */; };
 		EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355C92BABA8850016154F /* ResearchPostApi.swift */; };
 		EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */; };
 		EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */; };
@@ -158,6 +167,15 @@
 		EDA039BD2BAD71C2001928DF /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		EDA039BE2BAD71C2001928DF /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		EDA039D72BAD79E2001928DF /* TextSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSection.swift; sourceTree = "<group>"; };
+		EDA039D92BAD81F4001928DF /* LeftAlign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlign.swift; sourceTree = "<group>"; };
+		EDA039DB2BAD83BB001928DF /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
+		EDA039DD2BAD845D001928DF /* FontSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSettings.swift; sourceTree = "<group>"; };
+		EDA039DF2BAD8594001928DF /* SectionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBody.swift; sourceTree = "<group>"; };
+		EDA039E12BAD8666001928DF /* BulletSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletSection.swift; sourceTree = "<group>"; };
+		EDA039E42BAD8D02001928DF /* SectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionList.swift; sourceTree = "<group>"; };
+		EDA039E62BAD939A001928DF /* SectionSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSubtitle.swift; sourceTree = "<group>"; };
+		EDA039E92BAD95A8001928DF /* SectionListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionListItem.swift; path = ResearchRoute/TextComponents/SectionListItem.swift; sourceTree = SOURCE_ROOT; };
+		EDA039EB2BAD99DD001928DF /* SectionBodyStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBodyStack.swift; sourceTree = "<group>"; };
 		EDC355C92BABA8850016154F /* ResearchPostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostApi.swift; sourceTree = "<group>"; };
 		EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostModel.swift; sourceTree = "<group>"; };
 		EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationApi.swift; sourceTree = "<group>"; };
@@ -227,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				EDA039BF2BAD71C2001928DF /* Fonts */,
-				EDA039A82BAD390C001928DF /* Components */,
+				EDA039A82BAD390C001928DF /* TextComponents */,
 				EDA039A72BAD313F001928DF /* Info.plist */,
 				18C3B0A22BACDEA300DDF5A9 /* OCR */,
 				ED759C5B2BAA7E6800A61C46 /* View */,
@@ -311,12 +329,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		EDA039A82BAD390C001928DF /* Components */ = {
+		EDA039A82BAD390C001928DF /* TextComponents */ = {
 			isa = PBXGroup;
 			children = (
+				EDA039E82BAD943F001928DF /* Atomic */,
 				EDA039D72BAD79E2001928DF /* TextSection.swift */,
+				EDA039EB2BAD99DD001928DF /* SectionBodyStack.swift */,
+				EDA039E12BAD8666001928DF /* BulletSection.swift */,
+				EDA039E42BAD8D02001928DF /* SectionList.swift */,
+				EDA039E92BAD95A8001928DF /* SectionListItem.swift */,
 			);
-			path = Components;
+			path = TextComponents;
 			sourceTree = "<group>";
 		};
 		EDA039A92BAD3919001928DF /* EditProfileViews */ = {
@@ -383,6 +406,18 @@
 				EDA039BE2BAD71C2001928DF /* Poppins-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EDA039E82BAD943F001928DF /* Atomic */ = {
+			isa = PBXGroup;
+			children = (
+				EDA039DD2BAD845D001928DF /* FontSettings.swift */,
+				EDA039D92BAD81F4001928DF /* LeftAlign.swift */,
+				EDA039DB2BAD83BB001928DF /* SectionTitle.swift */,
+				EDA039E62BAD939A001928DF /* SectionSubtitle.swift */,
+				EDA039DF2BAD8594001928DF /* SectionBody.swift */,
+			);
+			path = Atomic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,6 +551,7 @@
 				18C3B0852BACAECF00DDF5A9 /* EditCourseworkView.swift in Sources */,
 				ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */,
 				18C3B0932BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift in Sources */,
+				EDA039E22BAD8666001928DF /* BulletSection.swift in Sources */,
 				EDA039A62BAD2E12001928DF /* NavigationViewModel.swift in Sources */,
 				EDA039D82BAD79E2001928DF /* TextSection.swift in Sources */,
 				ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */,
@@ -524,20 +560,26 @@
 				ED759C632BAA860600A61C46 /* LandingView.swift in Sources */,
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
+				EDA039EA2BAD95A8001928DF /* SectionListItem.swift in Sources */,
 				18C3B0832BACAEB200DDF5A9 /* EditAboutMeView.swift in Sources */,
+				EDA039DA2BAD81F4001928DF /* LeftAlign.swift in Sources */,
 				18C3B0AC2BAD493C00DDF5A9 /* AppliedJobsView.swift in Sources */,
 				18C3B0892BACAF0700DDF5A9 /* EditExperienceItemView.swift in Sources */,
 				18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
+				EDA039E02BAD8594001928DF /* SectionBody.swift in Sources */,
 				EDA039A32BAD2CC6001928DF /* OcrView.swift in Sources */,
 				EDA039A42BAD2CC6001928DF /* ocr_wrapper.swift in Sources */,
 				18C3B0A62BAD387900DDF5A9 /* ApplicationView.swift in Sources */,
+				EDA039E72BAD939A001928DF /* SectionSubtitle.swift in Sources */,
+				EDA039DC2BAD83BB001928DF /* SectionTitle.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
 				EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */,
 				18C3B08F2BACAF7800DDF5A9 /* ProfileView.swift in Sources */,
 				ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */,
 				EDC355D02BABB0E20016154F /* ApplicationModel.swift in Sources */,
+				EDA039EC2BAD99DD001928DF /* SectionBodyStack.swift in Sources */,
 				18C3B08B2BACAF1B00DDF5A9 /* EditNameView.swift in Sources */,
 				ED759C6D2BAAA07D00A61C46 /* LoginInfo.swift in Sources */,
 				ED759C752BAABC0700A61C46 /* UserViewModel.swift in Sources */,
@@ -546,7 +588,9 @@
 				18C3B0A82BAD443600DDF5A9 /* JobApplicationSuccessView.swift in Sources */,
 				EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */,
 				18C3B0912BACAF8B00DDF5A9 /* ResumeParserView.swift in Sources */,
+				EDA039E52BAD8D03001928DF /* SectionList.swift in Sources */,
 				EDA039A02BACDB89001928DF /* Model.swift in Sources */,
+				EDA039DE2BAD845D001928DF /* FontSettings.swift in Sources */,
 				18C3B0AE2BAD498400DDF5A9 /* RecommendedProjectsView.swift in Sources */,
 				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
