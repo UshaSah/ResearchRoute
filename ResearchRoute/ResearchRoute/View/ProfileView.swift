@@ -2,6 +2,8 @@ import SwiftUI
 import WrappingStack
 
 struct ProfileView: View {
+    @EnvironmentObject var userViewModel: UserViewModel
+    
     let titleFontName: String = "Poppins-Bold"
     let subtitleFontName: String = "Poppins-SemiBold"
     let bodyFontName: String = "Poppins-Regular"
@@ -16,9 +18,7 @@ struct ProfileView: View {
 
     let skillsArray = ["HTML", "CSS", "JavaScript", "React.js", "MongoDB", "Swift", "Angular.js", "Python"]
     let coursesArray = ["Data Structures and Algorithms", "Operating Systems", "Artificial Intelligence", "Computer Vision", "iOS App Development"]
-    
-    @State var user: StudentModel? = nil
-    
+        
     @State private var navigateToEditNameAndPictureView = false
     @State private var navigateToEditAboutMeView = false
     @State private var navigateToEditExperienceItemView = false
@@ -35,7 +35,7 @@ struct ProfileView: View {
                             .font(.system(size: 90))
                         
                         HStack(spacing: 3) {
-                            Text((user?.firstName ?? "nil") + " " + (user?.lastName ?? "nil"))
+                            Text((userViewModel.studentData?.firstName ?? "nil") + " " + (userViewModel.studentData?.lastName ?? "nil"))
                                 .font(.custom(titleFontName, size: titleFontSize))
                                 .foregroundStyle(titleColor)
                             
@@ -85,7 +85,7 @@ struct ProfileView: View {
                             .font(.custom(subtitleFontName, size: subtitleFontSize))
                             .foregroundStyle(subtitleColor)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        ForEach(user?.experience ?? [], id: \.self) { element in
+                        ForEach(userViewModel.studentData?.experience ?? [], id: \.self) { element in
                             VStack() {
                                 HStack(spacing: 3) {
                                     Text("Senior Software Engineer")
@@ -125,7 +125,7 @@ struct ProfileView: View {
                             .foregroundStyle(subtitleColor)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        ForEach(user?.experience ?? [], id: \.self) { element in
+                        ForEach(userViewModel.studentData?.experience ?? [], id: \.self) { element in
                             VStack() {
                                 HStack(spacing: 3) {
                                     Text("Senior Software Engineer")
@@ -179,7 +179,7 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         WrappingHStack(id: \.self, alignment: .leading, horizontalSpacing: 5, verticalSpacing: 5) {
-                            ForEach(user?.skills ?? [], id: \.self) { skill in
+                            ForEach(userViewModel.studentData?.skills ?? [], id: \.self) { skill in
                                 Text(skill)
                                     .font(.custom(bodyFontName, size: bodyFontSize))
                                     .padding(.vertical, 2)
@@ -211,7 +211,7 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         WrappingHStack(id: \.self, alignment: .leading, horizontalSpacing: 5, verticalSpacing: 5) {
-                            ForEach(user?.coursework ?? [], id: \.self) { course in
+                            ForEach(userViewModel.studentData?.coursework ?? [], id: \.self) { course in
                                 Text(course)
                                     .font(.custom(bodyFontName, size: bodyFontSize))
                                     .padding(.vertical, 2)
@@ -223,21 +223,9 @@ struct ProfileView: View {
                         }
                     }
                 }
-                .onAppear {
-                    Task {
-                        do {
-                            user = try await StudentApi.read(id: AuthApi.getUid())
-                        } catch {
-                            print(error)
-                        }
-                    }
-                }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .padding(30)
             }
         }
-        Spacer()
-        NavigationMenuView()
-            .frame(alignment: .bottom)
     }
 }

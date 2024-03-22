@@ -75,8 +75,5 @@ struct EditAboutMeView: View {
                 print("Could not fetch user")
             }
         }
-        Spacer()
-        NavigationMenuView()
-            .frame(alignment: .bottom)
     }
 }

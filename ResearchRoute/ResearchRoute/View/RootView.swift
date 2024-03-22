@@ -11,7 +11,7 @@ struct RootView: View {
     @StateObject var userViewModel = UserViewModel()
     
     var body: some View {
-        NavigationStack {
+        ZStack {
             if userViewModel.isLoggedIn {
                 if userViewModel.doSetup {
                     SetupView()
@@ -23,8 +23,6 @@ struct RootView: View {
             else {
                 LandingView()
             }
-            Spacer()
-            NavigationMenuView()
         }
         .environmentObject(userViewModel)
     }

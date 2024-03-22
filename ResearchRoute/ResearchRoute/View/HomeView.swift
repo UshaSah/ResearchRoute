@@ -9,25 +9,29 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var userViewModel: UserViewModel
-    @State var navigateToProfileView: Bool = false
+    @StateObject var navigationViewModel = NavigationViewModel()
     
     var body: some View {
         VStack {
-            Text("Home")
-            NavigationLink(destination: ProfileView(), isActive: $navigateToProfileView) {
-                Button(action: {
-                    navigateToProfileView = true
-                }, label: {
-                    Text("Navigate to profile view")
-                })
+            if navigationViewModel.current == .profile {
+                ProfileView()
             }
-            Button(action: {
-                userViewModel.logout()
-            }, label: {
-                Text("Logout")
-            })
-            .padding()
+            else if navigationViewModel.current == .appliedProjects {
+                // ??
+            }
+            else if navigationViewModel.current == .recommendedProjects {
+                // ??
+            }
+            else if navigationViewModel.current == .ocr {
+                // ??
+            }
+            
+            Spacer()
+            
+            NavigationMenuView()
+                .frame(alignment: .bottom)
         }
+        .environmentObject(navigationViewModel)
     }
 }
 

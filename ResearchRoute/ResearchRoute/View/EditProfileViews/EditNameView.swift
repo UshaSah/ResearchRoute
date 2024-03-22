@@ -94,9 +94,6 @@ struct EditNameView: View {
                 }
             }
         }
-        Spacer()
-        NavigationMenuView()
-            .frame(alignment: .bottom)
     }
     
     func getUser() async {

@@ -51,8 +51,6 @@
 		18C3B0992BACB16300DDF5A9 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 18C3B0982BACB16300DDF5A9 /* GoogleGenerativeAI */; };
 		18C3B09D2BACC0F800DDF5A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C3B09C2BACC0F700DDF5A9 /* GoogleService-Info.plist */; };
 		18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */; };
-		18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */; };
-		18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */; };
 		ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C412BAA435C00A61C46 /* DbApi.swift */; };
 		ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C512BAA565C00A61C46 /* StudentModel.swift */; };
 		ED759C562BAA5A9500A61C46 /* StudentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C552BAA5A9500A61C46 /* StudentApi.swift */; };
@@ -68,6 +66,9 @@
 		ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C762BAAC01400A61C46 /* SignUpInfo.swift */; };
 		ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED759C7A2BAAC3A400A61C46 /* SetupView.swift */; };
 		EDA039A02BACDB89001928DF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0399F2BACDB89001928DF /* Model.swift */; };
+		EDA039A32BAD2CC6001928DF /* OcrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039A12BAD2CC6001928DF /* OcrView.swift */; };
+		EDA039A42BAD2CC6001928DF /* ocr_wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039A22BAD2CC6001928DF /* ocr_wrapper.swift */; };
+		EDA039A62BAD2E12001928DF /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039A52BAD2E12001928DF /* NavigationViewModel.swift */; };
 		EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355C92BABA8850016154F /* ResearchPostApi.swift */; };
 		EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */; };
 		EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */; };
@@ -90,8 +91,6 @@
 		18C3B0922BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverLetterGeneratorView.swift; sourceTree = "<group>"; };
 		18C3B09C2BACC0F700DDF5A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuView.swift; sourceTree = "<group>"; };
-		18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrView.swift; sourceTree = "<group>"; };
-		18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
 		ED759C412BAA435C00A61C46 /* DbApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbApi.swift; sourceTree = "<group>"; };
 		ED759C512BAA565C00A61C46 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		ED759C552BAA5A9500A61C46 /* StudentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentApi.swift; sourceTree = "<group>"; };
@@ -107,6 +106,10 @@
 		ED759C762BAAC01400A61C46 /* SignUpInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfo.swift; sourceTree = "<group>"; };
 		ED759C7A2BAAC3A400A61C46 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		EDA0399F2BACDB89001928DF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EDA039A12BAD2CC6001928DF /* OcrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OcrView.swift; sourceTree = "<group>"; };
+		EDA039A22BAD2CC6001928DF /* ocr_wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ocr_wrapper.swift; sourceTree = "<group>"; };
+		EDA039A52BAD2E12001928DF /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		EDA039A72BAD313F001928DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EDC355C92BABA8850016154F /* ResearchPostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostApi.swift; sourceTree = "<group>"; };
 		EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostModel.swift; sourceTree = "<group>"; };
 		EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationApi.swift; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 		0405BCD02BAA107600BCEEEA /* ResearchRoute */ = {
 			isa = PBXGroup;
 			children = (
+				EDA039A82BAD390C001928DF /* Components */,
+				EDA039A72BAD313F001928DF /* Info.plist */,
 				18C3B0A22BACDEA300DDF5A9 /* OCR */,
 				ED759C5B2BAA7E6800A61C46 /* View */,
 				ED759C5A2BAA7E1500A61C46 /* ViewModel */,
@@ -198,8 +203,8 @@
 		18C3B0A22BACDEA300DDF5A9 /* OCR */ = {
 			isa = PBXGroup;
 			children = (
-				18C3B0A02BACDE8D00DDF5A9 /* OcrView.swift */,
-				18C3B0A32BACDEBC00DDF5A9 /* ocr_wrapper.swift */,
+				EDA039A22BAD2CC6001928DF /* ocr_wrapper.swift */,
+				EDA039A12BAD2CC6001928DF /* OcrView.swift */,
 			);
 			path = OCR;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				ED759C6C2BAAA07D00A61C46 /* LoginInfo.swift */,
 				ED759C742BAABC0700A61C46 /* UserViewModel.swift */,
 				ED759C762BAAC01400A61C46 /* SignUpInfo.swift */,
+				EDA039A52BAD2E12001928DF /* NavigationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,14 +254,9 @@
 		ED759C5B2BAA7E6800A61C46 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EDA039A92BAD3919001928DF /* EditProfileViews */,
 				ED759C5C2BAA7E7D00A61C46 /* RootView.swift */,
-				18C3B0822BACAEB200DDF5A9 /* EditAboutMeView.swift */,
-				18C3B0842BACAECF00DDF5A9 /* EditCourseworkView.swift */,
 				18C3B0922BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift */,
-				18C3B0862BACAEEF00DDF5A9 /* EditEducationItemView.swift */,
-				18C3B0882BACAF0700DDF5A9 /* EditExperienceItemView.swift */,
-				18C3B08A2BACAF1B00DDF5A9 /* EditNameView.swift */,
-				18C3B08C2BACAF2D00DDF5A9 /* EditSkillsView.swift */,
 				ED759C622BAA860600A61C46 /* LandingView.swift */,
 				ED759C642BAA873000A61C46 /* LoginView.swift */,
 				18C3B08E2BACAF7800DDF5A9 /* ProfileView.swift */,
@@ -266,6 +267,26 @@
 				18C3B09E2BACD93800DDF5A9 /* NavigationMenuView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EDA039A82BAD390C001928DF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EDA039A92BAD3919001928DF /* EditProfileViews */ = {
+			isa = PBXGroup;
+			children = (
+				18C3B0822BACAEB200DDF5A9 /* EditAboutMeView.swift */,
+				18C3B0842BACAECF00DDF5A9 /* EditCourseworkView.swift */,
+				18C3B0862BACAEEF00DDF5A9 /* EditEducationItemView.swift */,
+				18C3B0882BACAF0700DDF5A9 /* EditExperienceItemView.swift */,
+				18C3B08A2BACAF1B00DDF5A9 /* EditNameView.swift */,
+				18C3B08C2BACAF2D00DDF5A9 /* EditSkillsView.swift */,
+			);
+			path = EditProfileViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,18 +401,19 @@
 				18C3B0852BACAECF00DDF5A9 /* EditCourseworkView.swift in Sources */,
 				ED759C522BAA565C00A61C46 /* StudentModel.swift in Sources */,
 				18C3B0932BACAFEE00DDF5A9 /* CoverLetterGeneratorView.swift in Sources */,
+				EDA039A62BAD2E12001928DF /* NavigationViewModel.swift in Sources */,
 				ED759C712BAAA3BC00A61C46 /* AuthApi.swift in Sources */,
 				EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */,
 				18C3B0872BACAEEF00DDF5A9 /* EditEducationItemView.swift in Sources */,
 				ED759C632BAA860600A61C46 /* LandingView.swift in Sources */,
 				ED759C5D2BAA7E7D00A61C46 /* RootView.swift in Sources */,
 				ED759C692BAA938300A61C46 /* HomeView.swift in Sources */,
-				18C3B0A12BACDE8D00DDF5A9 /* OcrView.swift in Sources */,
 				18C3B0832BACAEB200DDF5A9 /* EditAboutMeView.swift in Sources */,
 				18C3B0892BACAF0700DDF5A9 /* EditExperienceItemView.swift in Sources */,
 				18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */,
-				18C3B0A42BACDEBC00DDF5A9 /* ocr_wrapper.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
+				EDA039A32BAD2CC6001928DF /* OcrView.swift in Sources */,
+				EDA039A42BAD2CC6001928DF /* ocr_wrapper.swift in Sources */,
 				ED759C772BAAC01400A61C46 /* SignUpInfo.swift in Sources */,
 				ED759C732BAAA55E00A61C46 /* ViewModel.swift in Sources */,
 				EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */,
@@ -545,9 +567,9 @@
 				DEVELOPMENT_TEAM = 8B962782PK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResearchRoute/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -575,9 +597,9 @@
 				DEVELOPMENT_TEAM = 8B962782PK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ResearchRoute/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;

@@ -90,8 +90,5 @@ struct EditCourseworkView: View {
                 .padding(30)
             }
         }
-        Spacer()
-        NavigationMenuView()
-            .frame(alignment: .bottom)
     }
 }
