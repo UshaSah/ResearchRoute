@@ -7,6 +7,6 @@ enum CurrentNavigationView {
     case ocr
 }
 
-class NavigationViewModel: ObservableObject {
+class NavigationViewModel: ViewModel {
     @Published var current = CurrentNavigationView.profile
 }

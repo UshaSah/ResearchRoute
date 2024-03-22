@@ -11,22 +11,15 @@ import GoogleGenerativeAI
 import FirebaseFirestore
 
 struct CoverLetterGeneratorView: View {
-    @EnvironmentObject var userViewModel: UserViewModel
-    
     @State private var coverLetter: String = ""
-
-    var student: StudentModel? {
-        return userViewModel.studentData
-    }
+    var student: StudentModel
     
     var body: some View {
         VStack {
             Text("Cover letter: \(coverLetter)")
             Button("Generate Cover Letter") {
                 Task {
-                    if let student = student {
-                        coverLetter = await generateCoverLetter(for: student)
-                    }
+                    coverLetter = await generateCoverLetter(for: student)
                 }
             }
         }
@@ -66,3 +59,14 @@ struct CoverLetterGeneratorView: View {
         return "Name: \(fullName), Majors: \(majors), Experience: \(experiences ?? "N/A"), Skills and Interests: \(keywords)"
     }
 }
+
+//// Example instantiation of StudentModel and ExperienceModel
+//let experienceSample = ExperienceModel(title: "Research Assistant", organizationName: "University Laboratory", description: "Conducted experiments and contributed to research on neural networks.", startDate: Timestamp(date: Date()), endDate: Timestamp(date: Date()))
+//let studentSample = StudentModel(id: "1", firstName: "John", lastName: "Doe", majors: ["Computer Science"], experience: [experienceSample], keywords: ["Machine Learning", "Data Analysis", "Neural Networks"])
+//
+//// Previewing with a sample student
+//struct PreviewWrapper: View {
+//    var body: some View {
+//        CoverLetterGeneratorView(student: studentSample)
+//    }
+//}
