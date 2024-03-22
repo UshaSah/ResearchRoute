@@ -26,6 +26,18 @@ struct ResumeParserView: View {
     @State var user: StudentModel?
     
     var body: some View {
+        func parseResume() {
+            Task {
+                let lastName = await DocumentextractLastName()
+                let experience = await extractExperience()
+
+                // Now you have extracted information, you can further process it or update UI
+                print("Last Name:", lastName)
+                print("Experience:", experience)
+                
+                // Update UI or perform further processing here
+            }
+        }
         VStack {
             if isLoadingFirstName {
                 ProgressView("Loading first name...")
@@ -305,5 +317,18 @@ struct DocumentPicker: UIViewControllerRepresentable {
                 print("Course: \(course)")
             }
         }
+        
+       
+
     }
 }
+
+//mutating func updateAttributes() {
+//    Task {
+//        self.education = await extractEducation()
+//        self.experience = await extractExperience()
+//        self.coursework = await extractCoursework()
+//        self.skills = await extractSkills()
+//        self.keywords = await extractKeywords()
+//    }
+//}

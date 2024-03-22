@@ -26,4 +26,7 @@ struct StudentModel: Model {
     var coursework: [String]?
     var skills: [String]?
     var keywords: [String]?
+
+
 }
+

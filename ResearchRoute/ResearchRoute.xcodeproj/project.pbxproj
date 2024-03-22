@@ -10,6 +10,7 @@
 		0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */; };
 		0405BCD62BAA107A00BCEEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0405BCD52BAA107A00BCEEEA /* Assets.xcassets */; };
 		0405BCD92BAA107A00BCEEEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */; };
+		0462371B2BADEAFF00E55D24 /* StudentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462371A2BADEAFF00E55D24 /* StudentViewModel.swift */; };
 		18C3B04B2BACADD800DDF5A9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 18C3B04A2BACADD800DDF5A9 /* FirebaseAnalytics */; };
 		18C3B04D2BACADD800DDF5A9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 18C3B04C2BACADD800DDF5A9 /* FirebaseAnalyticsOnDeviceConversion */; };
 		18C3B04F2BACADD800DDF5A9 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18C3B04E2BACADD800DDF5A9 /* FirebaseAnalyticsSwift */; };
@@ -79,6 +80,7 @@
 		0405BCD12BAA107600BCEEEA /* ResearchRouteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchRouteApp.swift; sourceTree = "<group>"; };
 		0405BCD52BAA107A00BCEEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0405BCD82BAA107A00BCEEEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0462371A2BADEAFF00E55D24 /* StudentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewModel.swift; sourceTree = "<group>"; };
 		18C3B0822BACAEB200DDF5A9 /* EditAboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutMeView.swift; sourceTree = "<group>"; };
 		18C3B0842BACAECF00DDF5A9 /* EditCourseworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseworkView.swift; sourceTree = "<group>"; };
 		18C3B0862BACAEEF00DDF5A9 /* EditEducationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEducationItemView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				ED759C6C2BAAA07D00A61C46 /* LoginInfo.swift */,
 				ED759C742BAABC0700A61C46 /* UserViewModel.swift */,
 				ED759C762BAAC01400A61C46 /* SignUpInfo.swift */,
+				0462371A2BADEAFF00E55D24 /* StudentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				18C3B0912BACAF8B00DDF5A9 /* ResumeParserView.swift in Sources */,
 				EDA039A02BACDB89001928DF /* Model.swift in Sources */,
 				ED759C7B2BAAC3A400A61C46 /* SetupView.swift in Sources */,
+				0462371B2BADEAFF00E55D24 /* StudentViewModel.swift in Sources */,
 				ED759C422BAA435C00A61C46 /* DbApi.swift in Sources */,
 				18C3B08D2BACAF2D00DDF5A9 /* EditSkillsView.swift in Sources */,
 			);
