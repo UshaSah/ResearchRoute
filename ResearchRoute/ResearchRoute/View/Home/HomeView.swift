@@ -17,13 +17,13 @@ struct HomeView: View {
                 ProfileView()
             }
             else if navigationViewModel.current == .appliedProjects {
-                // ??
+                //AppliedJobsView()
             }
             else if navigationViewModel.current == .recommendedProjects {
-                // ??
+                //RecommendedProjectsView()
             }
             else if navigationViewModel.current == .ocr {
-                // ??
+                //OcrView()
             }
             
             Spacer()

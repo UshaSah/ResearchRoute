@@ -104,3 +104,6 @@ struct ApplicationView: View {
     }
 }
 
+#Preview {
+    ApplicationView()
+}

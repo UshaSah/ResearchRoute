@@ -229,3 +229,8 @@ struct ProfileView: View {
         }
     }
 }
+
+#Preview {
+    ProfileView()
+        .environmentObject(UserViewModel())
+}

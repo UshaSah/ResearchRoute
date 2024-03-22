@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LandingView: View {
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 NavigationLink(destination: LoginView()) {
                     Text("Login")
