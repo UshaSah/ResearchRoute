@@ -1,7 +1,7 @@
 import SwiftUI
 import WrappingStack
 
-struct RecommendedProjectsView: View {
+struct ResearchPostView: View {
     init() {
         for familyName in UIFont.familyNames {
             print(familyName) // Prints font family name

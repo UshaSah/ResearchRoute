@@ -38,7 +38,7 @@ struct JobApplicationSuccessView: View {
                 .foregroundStyle(bodyColor)
                 .multilineTextAlignment(.center)
             
-            NavigationLink(destination: RecommendedProjectsView(), isActive: $navigateToRecommendedProjectsView) {
+            NavigationLink(destination: ResearchPostView(), isActive: $navigateToRecommendedProjectsView) {
                 Button(action: {
                     navigateToRecommendedProjectsView = true
                 }, label: {

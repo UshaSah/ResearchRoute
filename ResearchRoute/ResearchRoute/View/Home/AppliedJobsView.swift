@@ -21,13 +21,15 @@ let bodyColor: Color = Color(red: 129/255, green: 136/255, blue: 152/255)
 let backgroundColor: Color = Color(red: 249/255, green: 249/255, blue: 254/255)
 
 struct AppliedJobsView: View {
+    @EnvironmentObject var userViewModel: UserViewModel
+    @StateObject var appliedViewModel = AppliedViewModel()
     @State private var searchText = ""
+    
     var body: some View {
         VStack {
             VStack {
-                Text("Applied Jobs")
-                    .font(.custom(titleFontName, size: titleFontSize))
-                    .foregroundStyle(titleColor)
+                SectionTitle("Applied Jobs")
+                
                 TextField("", text: $searchText)
                     .font(.custom(bodyFontName, size: bodyFontSize))
                     .foregroundStyle(bodyColor)
@@ -44,86 +46,24 @@ struct AppliedJobsView: View {
                                 .padding(.leading, 10)
                         }
                     )
-                ScrollView {
-                    VStack(spacing: 15) {
-                        VStack(spacing: 3) {
-                            Text("Research Position 1")
-                                .font(.custom(titleFontName, size: subtitleFontSize))
-                                .foregroundStyle(titleColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            HStack(spacing: 3) {
-                                Image(systemName: "building")
-                                    .imageScale(.medium)
-                                    .foregroundStyle(titleColor)
-                                Text("UC Davis - Professor Name")
-                                    .font(.custom(bodyFontName, size: bodyFontSize))
-                                    .foregroundStyle(bodyColor)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            HStack(spacing: 3) {
-                                Image(systemName: "location")
-                                    .imageScale(.medium)
-                                    .foregroundStyle(titleColor)
-                                Text("Davis, CA, USA")
-                                    .font(.custom(bodyFontName, size: bodyFontSize))
-                                    .foregroundStyle(bodyColor)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("$60K/yr")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Applied on 5/1/2023")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
-                        .padding(10)
-                        .background(.white)
-                        .cornerRadius(5)
-                        
-                        VStack(spacing: 3) {
-                            Text("Research Position 2")
-                                .font(.custom(titleFontName, size: subtitleFontSize))
-                                .foregroundStyle(titleColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            HStack(spacing: 3) {
-                                Image(systemName: "building")
-                                    .imageScale(.medium)
-                                    .foregroundStyle(titleColor)
-                                Text("University of Georgia - Professor Name")
-                                    .font(.custom(bodyFontName, size: bodyFontSize))
-                                    .foregroundStyle(bodyColor)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            HStack(spacing: 3) {
-                                Image(systemName: "location")
-                                    .imageScale(.medium)
-                                    .foregroundStyle(titleColor)
-                                Text("Athens, GA, USA")
-                                    .font(.custom(bodyFontName, size: bodyFontSize))
-                                    .foregroundStyle(bodyColor)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("$60K/yr")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Applied on 12/20/2023")
-                                .font(.custom(bodyFontName, size: bodyFontSize))
-                                .foregroundStyle(bodyColor)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
-                        .padding(10)
-                        .background(.white)
-                        .cornerRadius(5)
+                
+                CardList(appliedViewModel.posts) { item in
+                    Card(title: item.title, university: item.university ?? "", faculty: item.faculty.joined(separator: ", "), location: "", pay: item.pay ?? "") {
+                        // ??
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .padding(30)
+        }
+        .onAppear {
+            appliedViewModel.getPosts(as: userViewModel)
         }
         .background(backgroundColor)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+}
+
+#Preview {
+    AppliedJobsView()
+        .environmentObject(UserViewModel())
 }
