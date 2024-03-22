@@ -35,12 +35,15 @@ https://github.com/UshaSah/ResearchRoute.git
 3. Configure your environment with the required API keys and database connections.
 
 ## Usage
-
+<b> You need a iphone 13 or newer to try out all the features. </b>
 1. To scan a professor's name template:
-- Navigate to the OCR section and follow the on-screen instructions.
-2. To parse your resume:
+- Navigate to the OCR section and follow the on-screen instructions. <b> You need a iphone 13 or newer </b>
+2. Login Credentials:
+- <b> Username: ajowe@ucdavis.edu </b>
+- <b> Password: 123456 </b>
+3. To parse your resume:
 - Go to the Resume Parser tab and upload your resume in a supported format.
-3. To view your applied jobs:
+4. To view your applied jobs:
 - Access the Applied Jobs section from the main menu.
 
 ## Contributing
