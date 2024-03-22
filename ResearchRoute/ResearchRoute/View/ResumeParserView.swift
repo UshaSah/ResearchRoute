@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAuth
 import PDFKit
 import MobileCoreServices
 import GoogleGenerativeAI
@@ -98,7 +99,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
     @Binding var resumeIsValid: String
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(parent: self, user: <#User#>)
     }
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
@@ -111,10 +112,13 @@ struct DocumentPicker: UIViewControllerRepresentable {
 
     class Coordinator: NSObject, UIDocumentPickerDelegate {
         var parent: DocumentPicker
-
-        init(_ parent: DocumentPicker) {
-            self.parent = parent
+        var user: StudentModel?
+//        var user: User
+        init(parent: DocumentPicker, user: StudentModel?) {
+                self.parent = parent
+                self.user = user
         }
+            
 
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
             guard let url = urls.first else { return }
@@ -210,16 +214,29 @@ struct DocumentPicker: UIViewControllerRepresentable {
         }
         
         func fillFirstName() async {
-            let updatedStudent = StudentModel(firstName: parent.firstName, lastName: parent.lastName)
-//            let new_name = parent.firstName
-            do {
-                try await StudentApi.update(data: updatedStudent)
-                print("Student's name updated successfully!")
-            } catch {
-                print("Error updating student's name")
+            Task {
+                do {
+                    if var obj = user {
+                        obj.firstName = "Jane"
+                        obj.lastName = "Doe"
+                        try await StudentApi.update(data: obj)
+                    }
+                } catch {
+                    print("Failed to update user: \(error)")
+                }
             }
-            
         }
+//            let updatedStudent = StudentModel(firstName: parent.firstName, lastName: parent.lastName)
+////            let new_name = parent.firstName
+//            do {
+//                try await StudentApi.update(data: updatedStudent)
+//                print("Student's name updated successfully!")
+//            } catch {
+//                print("Error updating student's name")
+//            }
+//            
+//        }
+        
        
         
         func extractLastName() async -> String {
