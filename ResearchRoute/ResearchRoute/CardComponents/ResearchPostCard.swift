@@ -8,30 +8,25 @@
 import SwiftUI
 
 struct Card: View {
-    let title: String
-    let university: String
-    let faculty: String
-    let location: String
-    let pay: String
+    let post: ResearchPostModel
     var appliedDate: String? = nil
-    var onClick: () -> Void
     
     var body: some View {
-        Button(action: onClick) {
+        NavigationLink(destination: ResearchPostView()) {
             VStack(spacing: 3) {
                 LeftAlign {
-                    SectionTitle(title)
+                    SectionTitle(post.title)
                 }
                 
                 ResearchPostCardLine(
                     imageName: "building",
-                    text: "\(university) - \(faculty)"
+                    text: "\(post.university ?? "NA") - \(post.faculty.joined(separator: ", "))"
                 )
                 
-                ResearchPostCardLine(imageName: "location", text: location)
+                ResearchPostCardLine(imageName: "location", text: post.location ?? "NA")
                 
                 LeftAlign {
-                    SectionBody(pay)
+                    SectionBody(post.pay ?? "NA")
                 }
                 
                 if let appliedDate = appliedDate {
@@ -48,7 +43,5 @@ struct Card: View {
 }
 
 #Preview {
-    Card(title: "Research Position", university: "UC Davis", faculty: "Sam King", location: "Davis, CA", pay: "$60k / year", appliedDate: "today") {
-        
-    }
+    Card(post: ResearchPostModel(title: "Research Position", faculty: ["Sam King"], university: "UC Davis", location: "Davis, CA", pay: "$60k / year"), appliedDate: "today")
 }

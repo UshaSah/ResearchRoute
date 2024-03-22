@@ -29,8 +29,6 @@ struct CardList<T: Hashable>: View {
 
 #Preview {
     CardList(["1", "2"]) { item in
-        Card(title: item, university: "UC Davis", faculty: "Sam King", location: "Davis, CA", pay: "$60k / year", appliedDate: "today") {
-            
-        }
+        Card(post: ResearchPostModel(title: "Research Position", faculty: ["Sam King"]), appliedDate: nil)
     }
 }

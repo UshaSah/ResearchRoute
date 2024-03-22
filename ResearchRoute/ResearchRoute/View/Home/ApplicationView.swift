@@ -2,18 +2,6 @@ import SwiftUI
 import GoogleGenerativeAI
 
 struct ApplicationView: View {
-    let titleFontName: String = "Poppins-Bold"
-    let subtitleFontName: String = "Poppins-SemiBold"
-    let bodyFontName: String = "Poppins-Regular"
-
-    let titleFontSize: CGFloat = 24
-    let subtitleFontSize: CGFloat = 18
-    let bodyFontSize: CGFloat = 12
-
-    let titleColor: Color = Color(red: 1/255, green: 159/255, blue: 171/255)
-    let subtitleColor: Color = Color(red: 58/255, green: 58/255, blue: 62/255)
-    let bodyColor: Color = Color(red: 129/255, green: 136/255, blue: 152/255)
-    
     @State private var navigateToJobApplicationSuccessView: Bool = false
 
     @State private var firstName: String = ""

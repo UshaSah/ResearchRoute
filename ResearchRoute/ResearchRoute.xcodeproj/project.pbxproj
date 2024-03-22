@@ -109,6 +109,7 @@
 		EDA039F72BADFF74001928DF /* AppliedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039F62BADFF74001928DF /* AppliedViewModel.swift */; };
 		EDA039F92BAE0966001928DF /* SuperTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039F82BAE0966001928DF /* SuperTitle.swift */; };
 		EDA039FB2BAE1CE3001928DF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039FA2BAE1CE3001928DF /* EmptyView.swift */; };
+		EDA039FD2BAE2820001928DF /* RecommendedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA039FC2BAE2820001928DF /* RecommendedViewModel.swift */; };
 		EDC355CA2BABA8850016154F /* ResearchPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355C92BABA8850016154F /* ResearchPostApi.swift */; };
 		EDC355CC2BABAACC0016154F /* ResearchPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */; };
 		EDC355CE2BABAFAE0016154F /* ApplicationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */; };
@@ -190,6 +191,7 @@
 		EDA039F62BADFF74001928DF /* AppliedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliedViewModel.swift; sourceTree = "<group>"; };
 		EDA039F82BAE0966001928DF /* SuperTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperTitle.swift; sourceTree = "<group>"; };
 		EDA039FA2BAE1CE3001928DF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		EDA039FC2BAE2820001928DF /* RecommendedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedViewModel.swift; sourceTree = "<group>"; };
 		EDC355C92BABA8850016154F /* ResearchPostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostApi.swift; sourceTree = "<group>"; };
 		EDC355CB2BABAACC0016154F /* ResearchPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchPostModel.swift; sourceTree = "<group>"; };
 		EDC355CD2BABAFAE0016154F /* ApplicationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationApi.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				EDA039A52BAD2E12001928DF /* NavigationViewModel.swift */,
 				EDA039F62BADFF74001928DF /* AppliedViewModel.swift */,
 				EDA039FA2BAE1CE3001928DF /* EmptyView.swift */,
+				EDA039FC2BAE2820001928DF /* RecommendedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				18C3B0892BACAF0700DDF5A9 /* EditExperienceItemView.swift in Sources */,
 				18C3B09F2BACD93800DDF5A9 /* NavigationMenuView.swift in Sources */,
 				0405BCD22BAA107600BCEEEA /* ResearchRouteApp.swift in Sources */,
+				EDA039FD2BAE2820001928DF /* RecommendedViewModel.swift in Sources */,
 				EDA039E02BAD8594001928DF /* SectionBody.swift in Sources */,
 				EDA039A32BAD2CC6001928DF /* OcrView.swift in Sources */,
 				EDA039A42BAD2CC6001928DF /* ocr_wrapper.swift in Sources */,

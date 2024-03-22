@@ -5,7 +5,7 @@ struct ResearchPostModel: Model {
     var title: String
     var faculty: [String]
     var university: String?
-    var location: GeoPoint?
+    var location: String?
     var pay: String?
     var description: String?
     var responsibilities: [String]?

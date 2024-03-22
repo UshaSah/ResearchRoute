@@ -9,11 +9,11 @@ import SwiftUI
 
 struct RecommendedView: View {
     @EnvironmentObject var userViewModel: UserViewModel
-    @StateObject var appliedViewModel = AppliedViewModel()
+    @StateObject var recommendedViewModel = RecommendedViewModel()
     @State private var searchText = ""
     
     var body: some View {
-        VStack {
+        NavigationView {
             VStack {
                 SectionTitle("Recommended Jobs")
                 
@@ -34,19 +34,17 @@ struct RecommendedView: View {
                         }
                     )
                 
-                CardList(appliedViewModel.posts) { item in
-                    Card(title: item.title, university: item.university ?? "", faculty: item.faculty.joined(separator: ", "), location: "", pay: item.pay ?? "") {
-                        // ??
-                    }
+                CardList(recommendedViewModel.posts) { item in
+                    Card(post: ResearchPostModel(title: "Research Position", faculty: ["Sam King"]), appliedDate: nil)
                 }
             }
             .padding(30)
+            .onAppear {
+                recommendedViewModel.getPosts(as: userViewModel)
+            }
+            .background(backgroundColor)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .onAppear {
-            appliedViewModel.getPosts(as: userViewModel)
-        }
-        .background(backgroundColor)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

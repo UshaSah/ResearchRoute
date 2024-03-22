@@ -20,7 +20,7 @@ struct HomeView: View {
                 AppliedJobsView()
             }
             else if navigationViewModel.current == .recommendedProjects {
-                // RecommendedView()
+                RecommendedView()
             }
             else if navigationViewModel.current == .ocr {
                 OcrView()
